@@ -3,8 +3,10 @@ SMDataDiller
 
 This pod has been created specially for easy managing ``TableView`` controllers.
 
+``` html
 DataProvider - provider of your content for tableView (from dataBase, server, etc). 
-DataSource   - handler of provided data. 
+DataSource   - handler of provided data. Prepares data for tableView.
+```
 
 ##Implementing
 To improve DataDiller for tableView, in your viewController (that keeps tableView) do the next:
