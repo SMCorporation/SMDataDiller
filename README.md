@@ -47,3 +47,7 @@ If you don't want this (really simple, trust me) way, you can make cells mapping
 This method (as ``fillWithObject:``) is called every time, when cell will be displayed on the screen. So, be aware to make here any heavyweight operations (creating DataFormatters, etc). 
 
 
+
+
+###P.S.
+To clarify how yo use ``SMDataDiller``, you can find Example Project inside. Have a nice coding ;)
