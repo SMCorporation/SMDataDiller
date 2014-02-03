@@ -1,10 +1,11 @@
 SMDataDiller
 ============
 
-This pod has been created specially for managing TableView controllers.
+This pod has been created specially for managing ``TableView`` controllers.
 
-To improve DataDiller for your TableView. In your viewController (that keeps tableView) do the next:
+To improve DataDiller for TableView, in your viewController (that keeps tableView) do the next:
 
+``` objective-c
 - (void)setupDataDillers
 {
     self.dataSource = [SUBCLASSofTableDataSource new];
@@ -16,3 +17,9 @@ To improve DataDiller for your TableView. In your viewController (that keeps tab
     
     [self.dataSource reload];
 }
+```
+
+And in ``viewDidLoad`` call this method:
+``` objective-c
+[self setupDataDillers];
+```
