@@ -32,3 +32,12 @@ To  simplify cell's mapping, you can just implement @protocol ```<SMCell>``` in 
 ```
 In this method (implemented by your tableViewCell subclass), you should write the way, domainObject will be mapped into cell.
 ``domainObject`` - object, that will be provided by your dataProvider for each cell. 
+
+
+If you don't want this (really simple, trust me) way, you can make cells mapping in your dataSource's method:
+``` objective-c
+- (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+```
+This method is called every time, when cell will be displayed on the screen. So, be aware to make here any heavyweight operations (creating DataFormatters, etc). 
+
+
