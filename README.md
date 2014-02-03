@@ -3,6 +3,7 @@ SMDataDiller
 
 This pod has been created specially for easy managing ``TableView`` controllers.
 
+##Implementing
 To improve DataDiller for tableView, in your viewController (that keeps tableView) do the next:
 
 ``` objective-c
@@ -38,6 +39,6 @@ If you don't want this (really simple, trust me) way, you can make cells mapping
 ``` objective-c
 - (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 ```
-This method is called every time, when cell will be displayed on the screen. So, be aware to make here any heavyweight operations (creating DataFormatters, etc). 
+This method (as ``fillWithObject:``) is called every time, when cell will be displayed on the screen. So, be aware to make here any heavyweight operations (creating DataFormatters, etc). 
 
 
