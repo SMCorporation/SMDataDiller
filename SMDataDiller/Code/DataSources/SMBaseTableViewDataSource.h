@@ -20,10 +20,12 @@
 @interface SMBaseTableViewDataSource : NSObject  <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
-@property (nonatomic, weak) SMBaseDataProvider *dataProvider;
+@property (nonatomic, strong) SMBaseDataProvider *dataProvider;
 @property (nonatomic, weak) id<SMBaseTableViewDataSourceDelegate> delegate;
 
 @property (nonatomic, assign) BOOL shouldDeselectCells; //YES by default
+
+- (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider tableView:(UITableView *)tableView;
 
 - (NSString *)cellReuseIdentefireAtIndexPath:(NSIndexPath *)indexPath;
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath;

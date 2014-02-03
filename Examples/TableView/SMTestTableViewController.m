@@ -13,7 +13,6 @@
 
 @interface SMTestTableViewController () <SMBaseTableViewDataSourceDelegate>
 
-@property (nonatomic, strong) SMTestTableDataProvider *dataProvider;
 @property (nonatomic, strong) SMSMTestTableDataSource *dataSource;
 
 @end
@@ -29,13 +28,9 @@
 
 - (void)setupDataDillers
 {
-    self.dataSource = [SMSMTestTableDataSource new];
-    self.dataProvider = [SMTestTableDataProvider new];
-    
-    self.dataSource.dataProvider = self.dataProvider;
-    self.dataSource.tableView = self.tableView;
+    self.dataSource = [[SMSMTestTableDataSource alloc] initWithDataProvider:[SMTestTableDataProvider new]
+                                                                  tableView:self.tableView];
     self.dataSource.delegate = self;
-    
     [self.dataSource reload];
 }
 

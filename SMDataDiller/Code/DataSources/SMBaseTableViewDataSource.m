@@ -20,6 +20,16 @@
     return self;
 }
 
+- (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider tableView:(UITableView *)tableView
+{
+    self = [self init];
+    if (self) {
+        self.dataProvider = dataProvider;
+        self.tableView = tableView;
+    }
+    return self;
+}
+
 - (void)setTableView:(UITableView *)tableView
 {
     _tableView = tableView;
