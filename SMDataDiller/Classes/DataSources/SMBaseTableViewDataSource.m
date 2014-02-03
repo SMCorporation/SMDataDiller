@@ -7,8 +7,18 @@
 //
 
 #import "SMBaseTableViewDataSource.h"
+#import "SMCell.h"
 
 @implementation SMBaseTableViewDataSource
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.shouldDeselectCells = YES;
+    }
+    return self;
+}
 
 - (void)setTableView:(UITableView *)tableView
 {
@@ -30,12 +40,18 @@
 
 - (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSAssert(nil, @"need to implement");
+    if ([cell respondsToSelector:@selector(fillWithObject:)]) {
+        id domainObject = [self.dataProvider itemAtIndexPath:indexPath];
+        [cell performSelector:@selector(fillWithObject:) withObject:domainObject];
+    }
+    else {
+        NSAssert(nil, @"need to implement in subclasses");
+    }
 }
 
 - (void)setupCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    //any things to setup cell (once)
+    //any things to setup cell (called once)
 }
 
 - (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -75,8 +91,10 @@
     NSString *cellReuseIdentefire = [self cellReuseIdentefireAtIndexPath:indexPath];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentefire];
     if (!cell) {
-        cell = [[[self classForCellAtIndexPath:indexPath] alloc] initWithStyle:[self cellsStyle]
-                                                               reuseIdentifier:cellReuseIdentefire];
+        Class cellClass = [self classForCellAtIndexPath:indexPath];
+        if(!(cell = [self loadNibForClass:cellClass])) {
+            cell = [[cellClass alloc] initWithStyle:[self cellsStyle] reuseIdentifier:cellReuseIdentefire];
+        }
         [self setupCell:cell atIndexPath:indexPath];
     }
     
@@ -90,8 +108,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(self.shouldDeselectCells) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
     [self didSelectedRowAtIndexPath:indexPath];
+}
+
+
+#pragma mark -
+#pragma mark Helpers
+
+- (UITableViewCell *)loadNibForClass:(Class)className
+{
+    NSString *classString = NSStringFromClass(className);
+    if ([[NSBundle mainBundle] pathForResource:classString ofType:@"nib"].length) {
+        return (UITableViewCell *)[[[NSBundle mainBundle] loadNibNamed:classString owner:nil options:nil] firstObject];
+    }
+    return nil;
 }
 
 @end

@@ -19,8 +19,13 @@
 		2DD6BEE8189EF829004526DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BED0189EF829004526DF /* UIKit.framework */; };
 		2DD6BEF0189EF829004526DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6BEEE189EF829004526DF /* InfoPlist.strings */; };
 		2DD6BEF2189EF829004526DF /* SMDataDillerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BEF1189EF829004526DF /* SMDataDillerTests.m */; };
-		2DD6BF04189EF889004526DF /* SMBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BEFF189EF889004526DF /* SMBaseDataProvider.m */; };
-		2DD6BF05189EF889004526DF /* SMBaseTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF03189EF889004526DF /* SMBaseTableViewDataSource.m */; };
+		2DD6BF0D189F1FBA004526DF /* SMBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF09189F1FBA004526DF /* SMBaseDataProvider.m */; };
+		2DD6BF0E189F1FBA004526DF /* SMBaseTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF0C189F1FBA004526DF /* SMBaseTableViewDataSource.m */; };
+		2DD6BF1C189F1FCD004526DF /* SMTestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF13189F1FCD004526DF /* SMTestTableViewCell.m */; };
+		2DD6BF1D189F1FCD004526DF /* SMTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6BF14189F1FCD004526DF /* SMTestTableViewCell.xib */; };
+		2DD6BF1E189F1FCD004526DF /* SMSMTestTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF17189F1FCD004526DF /* SMSMTestTableDataSource.m */; };
+		2DD6BF1F189F1FCD004526DF /* SMTestTableDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF19189F1FCD004526DF /* SMTestTableDataProvider.m */; };
+		2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF1B189F1FCD004526DF /* SMTestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +55,21 @@
 		2DD6BEED189EF829004526DF /* SMDataDillerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SMDataDillerTests-Info.plist"; sourceTree = "<group>"; };
 		2DD6BEEF189EF829004526DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2DD6BEF1189EF829004526DF /* SMDataDillerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMDataDillerTests.m; sourceTree = "<group>"; };
-		2DD6BEFE189EF889004526DF /* SMBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseDataProvider.h; sourceTree = "<group>"; };
-		2DD6BEFF189EF889004526DF /* SMBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseDataProvider.m; sourceTree = "<group>"; };
-		2DD6BF02189EF889004526DF /* SMBaseTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseTableViewDataSource.h; sourceTree = "<group>"; };
-		2DD6BF03189EF889004526DF /* SMBaseTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseTableViewDataSource.m; sourceTree = "<group>"; };
+		2DD6BF08189F1FBA004526DF /* SMBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseDataProvider.h; sourceTree = "<group>"; };
+		2DD6BF09189F1FBA004526DF /* SMBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseDataProvider.m; sourceTree = "<group>"; };
+		2DD6BF0B189F1FBA004526DF /* SMBaseTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseTableViewDataSource.h; sourceTree = "<group>"; };
+		2DD6BF0C189F1FBA004526DF /* SMBaseTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseTableViewDataSource.m; sourceTree = "<group>"; };
+		2DD6BF12189F1FCD004526DF /* SMTestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestTableViewCell.h; sourceTree = "<group>"; };
+		2DD6BF13189F1FCD004526DF /* SMTestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestTableViewCell.m; sourceTree = "<group>"; };
+		2DD6BF14189F1FCD004526DF /* SMTestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMTestTableViewCell.xib; sourceTree = "<group>"; };
+		2DD6BF16189F1FCD004526DF /* SMSMTestTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSMTestTableDataSource.h; sourceTree = "<group>"; };
+		2DD6BF17189F1FCD004526DF /* SMSMTestTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSMTestTableDataSource.m; sourceTree = "<group>"; };
+		2DD6BF18189F1FCD004526DF /* SMTestTableDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestTableDataProvider.h; sourceTree = "<group>"; };
+		2DD6BF19189F1FCD004526DF /* SMTestTableDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestTableDataProvider.m; sourceTree = "<group>"; };
+		2DD6BF1A189F1FCD004526DF /* SMTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestTableViewController.h; sourceTree = "<group>"; };
+		2DD6BF1B189F1FCD004526DF /* SMTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestTableViewController.m; sourceTree = "<group>"; };
+		2DD6BF22189F1FEF004526DF /* SMCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCell.h; sourceTree = "<group>"; };
+		2DD6BF23189F1FEF004526DF /* SMDataDiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDataDiller.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +99,7 @@
 		2DD6BEC0189EF829004526DF = {
 			isa = PBXGroup;
 			children = (
+				2DD6BF0F189F1FCD004526DF /* Examples */,
 				2DD6BED2189EF829004526DF /* SMDataDiller */,
 				2DD6BEEB189EF829004526DF /* SMDataDillerTests */,
 				2DD6BECB189EF829004526DF /* Frameworks */,
@@ -113,7 +130,9 @@
 		2DD6BED2189EF829004526DF /* SMDataDiller */ = {
 			isa = PBXGroup;
 			children = (
-				2DD6BEFB189EF889004526DF /* Classes */,
+				2DD6BF21189F1FEF004526DF /* Protocols */,
+				2DD6BF23189F1FEF004526DF /* SMDataDiller.h */,
+				2DD6BF06189F1FBA004526DF /* Classes */,
 				2DD6BEDB189EF829004526DF /* SMAppDelegate.h */,
 				2DD6BEDC189EF829004526DF /* SMAppDelegate.m */,
 				2DD6BEDE189EF829004526DF /* Images.xcassets */,
@@ -151,47 +170,79 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2DD6BEFB189EF889004526DF /* Classes */ = {
+		2DD6BF06189F1FBA004526DF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2DD6BEFC189EF889004526DF /* DataProviders */,
-				2DD6BF00189EF889004526DF /* DataSources */,
+				2DD6BF07189F1FBA004526DF /* DataProviders */,
+				2DD6BF0A189F1FBA004526DF /* DataSources */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		2DD6BEFC189EF889004526DF /* DataProviders */ = {
+		2DD6BF07189F1FBA004526DF /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
-				2DD6BEFD189EF889004526DF /* Base */,
+				2DD6BF08189F1FBA004526DF /* SMBaseDataProvider.h */,
+				2DD6BF09189F1FBA004526DF /* SMBaseDataProvider.m */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
 		};
-		2DD6BEFD189EF889004526DF /* Base */ = {
+		2DD6BF0A189F1FBA004526DF /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				2DD6BEFE189EF889004526DF /* SMBaseDataProvider.h */,
-				2DD6BEFF189EF889004526DF /* SMBaseDataProvider.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		2DD6BF00189EF889004526DF /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-				2DD6BF01189EF889004526DF /* Base */,
+				2DD6BF0B189F1FBA004526DF /* SMBaseTableViewDataSource.h */,
+				2DD6BF0C189F1FBA004526DF /* SMBaseTableViewDataSource.m */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
 		};
-		2DD6BF01189EF889004526DF /* Base */ = {
+		2DD6BF0F189F1FCD004526DF /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				2DD6BF02189EF889004526DF /* SMBaseTableViewDataSource.h */,
-				2DD6BF03189EF889004526DF /* SMBaseTableViewDataSource.m */,
+				2DD6BF10189F1FCD004526DF /* TableView */,
 			);
-			path = Base;
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		2DD6BF10189F1FCD004526DF /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				2DD6BF11189F1FCD004526DF /* aCell */,
+				2DD6BF15189F1FCD004526DF /* DataDillers */,
+				2DD6BF1A189F1FCD004526DF /* SMTestTableViewController.h */,
+				2DD6BF1B189F1FCD004526DF /* SMTestTableViewController.m */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		2DD6BF11189F1FCD004526DF /* aCell */ = {
+			isa = PBXGroup;
+			children = (
+				2DD6BF12189F1FCD004526DF /* SMTestTableViewCell.h */,
+				2DD6BF13189F1FCD004526DF /* SMTestTableViewCell.m */,
+				2DD6BF14189F1FCD004526DF /* SMTestTableViewCell.xib */,
+			);
+			path = aCell;
+			sourceTree = "<group>";
+		};
+		2DD6BF15189F1FCD004526DF /* DataDillers */ = {
+			isa = PBXGroup;
+			children = (
+				2DD6BF16189F1FCD004526DF /* SMSMTestTableDataSource.h */,
+				2DD6BF17189F1FCD004526DF /* SMSMTestTableDataSource.m */,
+				2DD6BF18189F1FCD004526DF /* SMTestTableDataProvider.h */,
+				2DD6BF19189F1FCD004526DF /* SMTestTableDataProvider.m */,
+			);
+			path = DataDillers;
+			sourceTree = "<group>";
+		};
+		2DD6BF21189F1FEF004526DF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2DD6BF22189F1FEF004526DF /* SMCell.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DD6BED7189EF829004526DF /* InfoPlist.strings in Resources */,
+				2DD6BF1D189F1FCD004526DF /* SMTestTableViewCell.xib in Resources */,
 				2DD6BEDF189EF829004526DF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,10 +342,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD6BF1C189F1FCD004526DF /* SMTestTableViewCell.m in Sources */,
 				2DD6BEDD189EF829004526DF /* SMAppDelegate.m in Sources */,
 				2DD6BED9189EF829004526DF /* main.m in Sources */,
-				2DD6BF04189EF889004526DF /* SMBaseDataProvider.m in Sources */,
-				2DD6BF05189EF889004526DF /* SMBaseTableViewDataSource.m in Sources */,
+				2DD6BF0D189F1FBA004526DF /* SMBaseDataProvider.m in Sources */,
+				2DD6BF0E189F1FBA004526DF /* SMBaseTableViewDataSource.m in Sources */,
+				2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */,
+				2DD6BF1F189F1FCD004526DF /* SMTestTableDataProvider.m in Sources */,
+				2DD6BF1E189F1FCD004526DF /* SMSMTestTableDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

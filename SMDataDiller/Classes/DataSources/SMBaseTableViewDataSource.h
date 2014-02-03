@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SMBaseDataProvider.h"
 
-@protocol SMDataSourceDelegate <NSObject>
+@protocol SMBaseTableViewDataSourceDelegate <NSObject>
 
 @optional
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;
@@ -21,7 +21,9 @@
 
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, weak) SMBaseDataProvider *dataProvider;
-@property (nonatomic, weak) id<SMDataSourceDelegate> delegate;
+@property (nonatomic, weak) id<SMBaseTableViewDataSourceDelegate> delegate;
+
+@property (nonatomic, assign) BOOL shouldDeselectCells; //YES by default
 
 - (NSString *)cellReuseIdentefireAtIndexPath:(NSIndexPath *)indexPath;
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath;

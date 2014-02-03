@@ -2,7 +2,7 @@
 //  SMAppDelegate.h
 //  SMDataDiller
 //
-//  Created by Max Kuznetsov on 03.02.14.
+//  Created by SM on 03.02.14.
 //  Copyright (c) 2014 SM. All rights reserved.
 //
 
