@@ -50,4 +50,4 @@ This method (as ``fillWithObject:``) is called every time, when cell will be dis
 
 
 ###P.S.
-To clarify how yo use ``SMDataDiller``, you can find Example Project inside. Have a nice coding ;)
+To clarify how to use ``SMDataDiller``, you can find Example Project inside. Have a nice coding ;)
