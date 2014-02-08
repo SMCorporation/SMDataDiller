@@ -106,7 +106,6 @@
             if (sectionItem == item) {
                 return [NSIndexPath indexPathForRow:itemIndex inSection:sectionIndex];
             }
-            
         }
     } else if ([self isSectionObject:items]) {
         id<SMSectionObject> sectionObject = items;
