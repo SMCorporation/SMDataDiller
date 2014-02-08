@@ -9,7 +9,7 @@
 #import "SMTestTableViewController.h"
 
 #import "SMSMTestTableDataSource.h"
-#import "SMTestTableDataProvider.h"
+#import "SMBaseDataProvider.h"
 
 @interface SMTestTableViewController () <SMBaseTableViewDataSourceDelegate>
 
@@ -28,7 +28,10 @@
 
 - (void)setupDataDillers
 {
-    self.dataSource = [[SMSMTestTableDataSource alloc] initWithDataProvider:[SMTestTableDataProvider new]
+    SMBaseDataProvider *dataProvider = [[SMBaseDataProvider alloc] init];
+    [dataProvider setItems:@[@"Title1", @"TItle2", @"TItle3", @"TItle4", @"TItle5"]];
+    
+    self.dataSource = [[SMSMTestTableDataSource alloc] initWithDataProvider:dataProvider
                                                                   tableView:self.tableView];
     self.dataSource.delegate = self;
     [self.dataSource reload];

@@ -8,27 +8,103 @@
 
 #import "SMBaseDataProvider.h"
 
+@interface SMBaseDataProvider ()
+
+@property (nonatomic, copy) NSArray *items;
+
+@end
+
 @implementation SMBaseDataProvider
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (void)initialize
+{
+    
+}
+
+- (void)setItems:(NSArray *)items
+{
+    _items = items;
+}
+
+- (BOOL)hasSections
+{
+    if (self.items.count) {
+        id item = [self.items firstObject];
+        if ([item isKindOfClass:[NSArray class]]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 
 - (NSUInteger)numberOfSections
 {
+    if ([self hasSections]) {
+        return [self.items count];
+    }
     return 1;
 }
 
 - (NSUInteger)numberOfItemsInSection:(NSUInteger)sectionNumber
 {
-    return 0;
+    if ([self hasSections]) {
+        return [self.items[sectionNumber] count];
+    }
+    return self.items.count;
 }
 
 - (id)sectionObjectForSection:(NSUInteger)sectionNumber
 {
-    return nil;
+    if ([self hasSections]) {
+        return self.items[sectionNumber];
+    }
+    return self.items;
 }
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    if ([self hasSections]) {
+        return self.items[indexPath.section][indexPath.row];
+    }
+    id item = indexPath.section ? nil : self.items[indexPath.row];
+    return item;
 }
 
+- (NSIndexPath *)indexPathOfItem:(id)item
+{
+    NSIndexPath *(^sectionBlock)(NSArray *items, NSUInteger sectionIndex) = ^(NSArray *items, NSUInteger sectionIndex) {
+        for (int itemIndex = 0; itemIndex < items.count; itemIndex++) {
+            id sectionItem = items[itemIndex];
+            if (sectionItem == item) {
+                return [NSIndexPath indexPathForRow:itemIndex inSection:sectionIndex];
+            }
+        }
+        return (NSIndexPath *)nil;
+    };
+    
+    NSIndexPath *itemIndexPath = sectionBlock(self.items, 0);
+    
+    if ([self hasSections]) {
+        for (int sectionIndex = 0; sectionIndex < self.items.count; sectionIndex++) {
+            NSArray *sectionItems = self.items[sectionIndex];
+            NSIndexPath *indexPath = sectionBlock(sectionItems, sectionIndex);
+            if (indexPath) {
+                itemIndexPath = indexPath;
+                break;
+            }
+        }
+    }
+    
+    return itemIndexPath;
+}
 
 @end

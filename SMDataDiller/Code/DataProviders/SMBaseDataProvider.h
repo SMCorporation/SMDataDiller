@@ -15,5 +15,9 @@
 
 - (id)sectionObjectForSection:(NSUInteger)sectionNumber;
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
+- (NSIndexPath *)indexPathOfItem:(id)item;
+
+- (void)setItems:(NSArray *)items;
+- (void)initialize;
 
 @end
