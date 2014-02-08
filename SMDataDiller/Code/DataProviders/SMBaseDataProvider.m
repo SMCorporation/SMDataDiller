@@ -29,7 +29,7 @@
 {
     if (self.items.count) {
         id item = [self.items firstObject];
-        if ([item isKindOfClass:[NSArray class]] || [[item class] conformsToProtocol:@protocol(SMSectionObject)]) {
+        if ([item isKindOfClass:[NSArray class]] || [self isSectionObject:item]) {
             return YES;
         }
     }
@@ -47,6 +47,10 @@
 - (NSUInteger)numberOfItemsInSection:(NSUInteger)sectionNumber
 {
     if ([self hasSections]) {
+        id sectionItem = self.items[sectionNumber];
+        if ([self isSectionObject:sectionItem]) {
+            return [sectionItem itemsCount];
+        }
         return [self.items[sectionNumber] count];
     }
     return self.items.count;
@@ -63,6 +67,10 @@
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self hasSections]) {
+        id item = self.items[indexPath.section];
+        if ([self isSectionObject:item]) {
+            return [item itemForRow:indexPath.row];
+        }
         return self.items[indexPath.section][indexPath.row];
     }
     id item = (indexPath.section) ? nil : self.items[indexPath.row];
@@ -71,10 +79,20 @@
 
 - (NSIndexPath *)indexPathOfItem:(id)item
 {
-    NSIndexPath *(^sectionBlock)(NSArray *items, NSUInteger sectionIndex) = ^(NSArray *items, NSUInteger sectionIndex) {
-        for (int itemIndex = 0; itemIndex < items.count; itemIndex++) {
-            id sectionItem = items[itemIndex];
-            if (sectionItem == item) {
+    NSIndexPath *(^sectionBlock)(id items, NSUInteger sectionIndex) = ^(id items, NSUInteger sectionIndex) {
+        if ([items isKindOfClass:[NSArray class]]) {
+            NSArray *arrItems = (NSArray *)items;
+            for (int itemIndex = 0; itemIndex < arrItems.count; itemIndex++) {
+                id sectionItem = arrItems[itemIndex];
+                if (sectionItem == item) {
+                    return [NSIndexPath indexPathForRow:itemIndex inSection:sectionIndex];
+                }
+                
+            }
+        } else if ([self isSectionObject:items]) {
+            id<SMSectionObject> sectionObject = items;
+            NSUInteger itemIndex = [sectionObject rowForItem:item];
+            if (itemIndex != NSNotFound) {
                 return [NSIndexPath indexPathForRow:itemIndex inSection:sectionIndex];
             }
         }
@@ -82,7 +100,6 @@
     };
     
     NSIndexPath *itemIndexPath = sectionBlock(self.items, 0);
-    
     if ([self hasSections]) {
         for (int sectionIndex = 0; sectionIndex < self.items.count; sectionIndex++) {
             NSArray *sectionItems = self.items[sectionIndex];
@@ -95,6 +112,11 @@
     }
     
     return itemIndexPath;
+}
+
+- (BOOL)isSectionObject:(id)object
+{
+    return [[object class] conformsToProtocol:@protocol(SMSectionObject)];
 }
 
 @end

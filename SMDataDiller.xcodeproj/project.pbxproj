@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D3B72FB18A6AE3E001DE6DF /* SMSectionObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */; };
+		2D3B72FE18A6AE56001DE6DF /* SMTestSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */; };
 		2DD6BECD189EF829004526DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BECC189EF829004526DF /* Foundation.framework */; };
 		2DD6BECF189EF829004526DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BECE189EF829004526DF /* CoreGraphics.framework */; };
 		2DD6BED1189EF829004526DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BED0189EF829004526DF /* UIKit.framework */; };
@@ -39,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		2D3B72F618A67E44001DE6DF /* SMSectionObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMSectionObject.h; sourceTree = "<group>"; };
+		2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSectionObjectTests.m; sourceTree = "<group>"; };
+		2D3B72FC18A6AE56001DE6DF /* SMTestSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestSectionObject.h; sourceTree = "<group>"; };
+		2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestSectionObject.m; sourceTree = "<group>"; };
 		2DD6BEC9189EF829004526DF /* SMDataDiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMDataDiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6BECC189EF829004526DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DD6BECE189EF829004526DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,6 +99,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D3B72F918A6AE3E001DE6DF /* SectionObjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */,
+				2D3B72FC18A6AE56001DE6DF /* SMTestSectionObject.h */,
+				2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */,
+			);
+			path = SectionObjectTests;
+			sourceTree = "<group>";
+		};
 		2DD6BEC0189EF829004526DF = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +166,7 @@
 		2DD6BEEB189EF829004526DF /* SMDataDillerTests */ = {
 			isa = PBXGroup;
 			children = (
+				2D3B72F918A6AE3E001DE6DF /* SectionObjectTests */,
 				2DD6BEF1189EF829004526DF /* SMDataDillerTests.m */,
 				2DD6BEEC189EF829004526DF /* Supporting Files */,
 			);
@@ -353,6 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3B72FB18A6AE3E001DE6DF /* SMSectionObjectTests.m in Sources */,
+				2D3B72FE18A6AE56001DE6DF /* SMTestSectionObject.m in Sources */,
 				2DD6BEF2189EF829004526DF /* SMDataDillerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
