@@ -7,12 +7,7 @@
 //
 
 #import "SMBaseDataProvider.h"
-
-@interface SMBaseDataProvider ()
-
-@property (nonatomic, copy) NSArray *items;
-
-@end
+#import "SMSectionObject.h"
 
 @implementation SMBaseDataProvider
 
@@ -20,26 +15,21 @@
 {
     self = [super init];
     if (self) {
-        [self initialize];
+        [self initialConfigure];
     }
     return self;
 }
 
-- (void)initialize
+- (void)initialConfigure
 {
     
-}
-
-- (void)setItems:(NSArray *)items
-{
-    _items = items;
 }
 
 - (BOOL)hasSections
 {
     if (self.items.count) {
         id item = [self.items firstObject];
-        if ([item isKindOfClass:[NSArray class]]) {
+        if ([item isKindOfClass:[NSArray class]] || [[item class] conformsToProtocol:@protocol(SMSectionObject)]) {
             return YES;
         }
     }
@@ -65,7 +55,7 @@
 - (id)sectionObjectForSection:(NSUInteger)sectionNumber
 {
     if ([self hasSections]) {
-        return self.items[sectionNumber];
+        return (sectionNumber < self.items.count) ? self.items[sectionNumber] : nil;
     }
     return self.items;
 }
@@ -75,7 +65,7 @@
     if ([self hasSections]) {
         return self.items[indexPath.section][indexPath.row];
     }
-    id item = indexPath.section ? nil : self.items[indexPath.row];
+    id item = (indexPath.section) ? nil : self.items[indexPath.row];
     return item;
 }
 
