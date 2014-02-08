@@ -51,7 +51,7 @@
         if ([self isSectionObject:sectionItem]) {
             return [sectionItem itemsCount];
         }
-        return [self.items[sectionNumber] count];
+        return [sectionItem count];
     }
     return self.items.count;
 }
@@ -71,7 +71,7 @@
         if ([self isSectionObject:item]) {
             return [item itemForRow:indexPath.row];
         }
-        return self.items[indexPath.section][indexPath.row];
+        return item[indexPath.row];
     }
     id item = (indexPath.section) ? nil : self.items[indexPath.row];
     return item;
