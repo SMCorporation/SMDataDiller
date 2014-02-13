@@ -54,7 +54,7 @@
 
 - (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    if ([[cell class] conformsToProtocol:@protocol(SMCell)]) {
+    if ([cell respondsToSelector:@selector(fillWithObject:)]) {
         id domainObject = [self.dataProvider itemAtIndexPath:indexPath];
         [cell performSelector:@selector(fillWithObject:) withObject:domainObject];
     } else {
