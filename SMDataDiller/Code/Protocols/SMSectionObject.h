@@ -10,9 +10,8 @@
 
 @protocol SMSectionObject <NSObject>
 
-@required
+- (NSUInteger)itemsCount;
 - (id)itemForRow:(NSUInteger)row;
 - (NSUInteger)rowForItem:(id)item;
-- (NSUInteger)itemsCount;
 
 @end

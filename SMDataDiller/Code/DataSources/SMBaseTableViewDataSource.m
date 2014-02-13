@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        self.shouldDeselectCells = YES;
+        self.shouldAutoDeselectCells = YES;
     }
     return self;
 }
@@ -37,15 +37,19 @@
     _tableView.delegate = self;
 }
 
+
+#pragma mark -
+#pragma mark Data Managment
+
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath
 {
     return [UITableViewCell class];
 }
 
-- (NSString *)cellReuseIdentefireAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)cellReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *prefix = NSStringFromClass(self.class);
-    return [NSString stringWithFormat:@"%@%@", prefix, @"cellReuseIdentefire"];
+    return [NSString stringWithFormat:@"%@%@", prefix, @"cellReuseIdentefier"];
 }
 
 - (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -98,12 +102,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellReuseIdentefire = [self cellReuseIdentefireAtIndexPath:indexPath];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentefire];
+    NSString *cellReuseIdentefier = [self cellReuseIdentifierAtIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentefier];
     if (!cell) {
         Class cellClass = [self classForCellAtIndexPath:indexPath];
         if(!(cell = [self loadNibForClass:cellClass])) {
-            cell = [[cellClass alloc] initWithStyle:[self cellsStyle] reuseIdentifier:cellReuseIdentefire];
+            cell = [[cellClass alloc] initWithStyle:[self cellsStyle] reuseIdentifier:cellReuseIdentefier];
         }
         [self setupCell:cell atIndexPath:indexPath];
     }
@@ -118,7 +122,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(self.shouldDeselectCells) {
+    if(self.shouldAutoDeselectCells) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     [self didSelectedRowAtIndexPath:indexPath];
