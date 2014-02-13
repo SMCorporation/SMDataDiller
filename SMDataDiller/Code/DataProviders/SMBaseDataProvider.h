@@ -15,9 +15,9 @@
 - (void)initialConfigure;
 
 - (NSUInteger)numberOfSections;
-- (NSUInteger)numberOfItemsInSection:(NSUInteger)sectionNumber;
+- (NSUInteger)numberOfItemsInSection:(NSUInteger)section;
 
-- (id)sectionObjectForSection:(NSUInteger)sectionNumber;
+- (id)sectionObjectForSection:(NSUInteger)section;
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath *)indexPathOfItem:(id)item;
 

@@ -25,6 +25,10 @@
     // there is place for any initial configurations of your dataProvider
 }
 
+
+#pragma mark -
+#pragma mark Content Managment
+
 - (NSUInteger)numberOfSections
 {
     if ([self hasSections]) {
@@ -33,22 +37,22 @@
     return 1;
 }
 
-- (NSUInteger)numberOfItemsInSection:(NSUInteger)sectionNumber
+- (NSUInteger)numberOfItemsInSection:(NSUInteger)section
 {
     if ([self hasSections]) {
-        id sectionItem = self.items[sectionNumber];
-        if ([self isSectionObject:sectionItem]) {
-            return [sectionItem itemsCount];
+        id sectionObject = self.items[section];
+        if ([self isSectionObject:sectionObject]) {
+            return [sectionObject itemsCount];
         }
-        return [sectionItem count];
+        return [sectionObject count];
     }
     return self.items.count;
 }
 
-- (id)sectionObjectForSection:(NSUInteger)sectionNumber
+- (id)sectionObjectForSection:(NSUInteger)section
 {
     if ([self hasSections]) {
-        return (sectionNumber < self.items.count) ? self.items[sectionNumber] : nil;
+        return (section < self.items.count) ? self.items[section] : nil;
     }
     return self.items;
 }
@@ -96,6 +100,11 @@
     return NO;
 }
 
+- (BOOL)isSectionObject:(id)object
+{
+    return [[object class] conformsToProtocol:@protocol(SMSectionObject)];
+}
+
 - (NSIndexPath *)indexPathForItem:(id)item fromItems:(id)items withSetionIndex:(NSUInteger)sectionIndex
 {
     if ([items isKindOfClass:[NSArray class]]) {
@@ -114,11 +123,6 @@
         }
     }
     return nil;
-}
-
-- (BOOL)isSectionObject:(id)object
-{
-    return [[object class] conformsToProtocol:@protocol(SMSectionObject)];
 }
 
 @end
