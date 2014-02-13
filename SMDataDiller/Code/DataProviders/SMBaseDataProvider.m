@@ -62,8 +62,7 @@
         }
         return item[indexPath.row];
     }
-    id item = (indexPath.section) ? nil : self.items[indexPath.row];
-    return item;
+    return (indexPath.section) ? nil : self.items[indexPath.row];;
 }
 
 - (NSIndexPath *)indexPathOfItem:(id)item
