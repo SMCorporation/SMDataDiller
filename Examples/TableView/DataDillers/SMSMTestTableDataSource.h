@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 SM. All rights reserved.
 //
 
-#import "SMBaseTableViewDataSource.h"
+#import "SMDataDiller.h"
 
 @interface SMSMTestTableDataSource : SMBaseTableViewDataSource
 

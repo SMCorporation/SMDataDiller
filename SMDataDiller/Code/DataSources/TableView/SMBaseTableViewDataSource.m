@@ -8,16 +8,16 @@
 
 #import "SMBaseTableViewDataSource.h"
 #import "SMCell.h"
+#import "SMBaseDataSourceDelegate.h"
+#import "SMBaseDataProvider.h"
+
 
 @implementation SMBaseTableViewDataSource
 
-- (id)init
+- (void)initialConfigure
 {
-    self = [super init];
-    if (self) {
-        self.shouldAutoDeselectCells = YES;
-    }
-    return self;
+    self.shouldAutoDeselectCells = YES;
+    self.cellsStyle = UITableViewCellStyleDefault;
 }
 
 - (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider tableView:(UITableView *)tableView
@@ -46,48 +46,20 @@
     return [UITableViewCell class];
 }
 
-- (NSString *)cellReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *prefix = NSStringFromClass(self.class);
-    return [NSString stringWithFormat:@"%@%@", prefix, @"cellReuseIdentefier"];
-}
-
-- (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    if ([cell respondsToSelector:@selector(fillWithObject:)]) {
-        id domainObject = [self.dataProvider itemAtIndexPath:indexPath];
-        [cell performSelector:@selector(fillWithObject:) withObject:domainObject];
-    } else {
-        NSAssert(nil, @"need to implement in subclasses");
-    }
-}
-
 - (void)setupCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     //any things to setup cell (called once)
 }
 
-- (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    if ([self.delegate respondsToSelector:@selector(didSelectRowAtIndexPath:withItem:)]) {
-        id itemObject = [self.dataProvider itemAtIndexPath:indexPath];
-        [self.delegate didSelectRowAtIndexPath:indexPath withItem:itemObject];
-    }
-}
-
 - (void)reload
 {
+    [super reload];
     [self.tableView reloadData];
 }
 
 
 #pragma mark -
 #pragma mark UITableViewDataSource
-
-- (UITableViewCellStyle)cellsStyle
-{
-    return UITableViewCellStyleDefault;
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -106,7 +78,7 @@
     if (!cell) {
         Class cellClass = [self classForCellAtIndexPath:indexPath];
         if(!(cell = [self loadNibForClass:cellClass])) {
-            cell = [[cellClass alloc] initWithStyle:[self cellsStyle] reuseIdentifier:cellReuseIdentefier];
+            cell = [[cellClass alloc] initWithStyle:self.cellsStyle reuseIdentifier:cellReuseIdentefier];
         }
         [self setupCell:cell atIndexPath:indexPath];
     }

@@ -6,26 +6,16 @@
 //  Copyright (c) 2014 SP. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "SMDataDiller.h"
+#import "SMBaseDataSource.h"
 
-@interface SMBaseTableViewDataSource : NSObject  <UITableViewDataSource, UITableViewDelegate>
+@interface SMBaseTableViewDataSource : SMBaseDataSource  <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
-@property (nonatomic, strong) SMBaseDataProvider *dataProvider;
-@property (nonatomic, weak) id<SMBaseDataSourceDelegate> delegate;
-
-@property (nonatomic, assign) BOOL shouldAutoDeselectCells; // "YES" by default
+@property (nonatomic, assign) UITableViewCellStyle cellsStyle;  // UITableViewCellStyleDefault by default
 
 - (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider tableView:(UITableView *)tableView;
 
-- (NSString *)cellReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath;
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath;
-- (UITableViewCellStyle)cellsStyle;
-
-- (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)setupCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-- (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
-- (void)reload;
 
 @end

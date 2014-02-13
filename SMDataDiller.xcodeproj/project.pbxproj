@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D3B72FB18A6AE3E001DE6DF /* SMSectionObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */; };
 		2D3B72FE18A6AE56001DE6DF /* SMTestSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */; };
+		2DA668F818AD6E21006D92DE /* SMBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA668F718AD6E21006D92DE /* SMBaseDataSource.m */; };
+		2DA668FB18AD728D006D92DE /* SMBaseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA668FA18AD728D006D92DE /* SMBaseCollectionViewDataSource.m */; };
 		2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC77ED18AD114800F5FEA0 /* SMBaseTableViewDataSource.m */; };
 		2DD6BECD189EF829004526DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BECC189EF829004526DF /* Foundation.framework */; };
 		2DD6BECF189EF829004526DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BECE189EF829004526DF /* CoreGraphics.framework */; };
@@ -44,6 +46,10 @@
 		2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSectionObjectTests.m; sourceTree = "<group>"; };
 		2D3B72FC18A6AE56001DE6DF /* SMTestSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestSectionObject.h; sourceTree = "<group>"; };
 		2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestSectionObject.m; sourceTree = "<group>"; };
+		2DA668F618AD6E21006D92DE /* SMBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseDataSource.h; sourceTree = "<group>"; };
+		2DA668F718AD6E21006D92DE /* SMBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseDataSource.m; sourceTree = "<group>"; };
+		2DA668F918AD728D006D92DE /* SMBaseCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseCollectionViewDataSource.h; sourceTree = "<group>"; };
+		2DA668FA18AD728D006D92DE /* SMBaseCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseCollectionViewDataSource.m; sourceTree = "<group>"; };
 		2DBC77EC18AD114800F5FEA0 /* SMBaseTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseTableViewDataSource.h; sourceTree = "<group>"; };
 		2DBC77ED18AD114800F5FEA0 /* SMBaseTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseTableViewDataSource.m; sourceTree = "<group>"; };
 		2DBC77EF18AD122100F5FEA0 /* SMBaseDataSourceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMBaseDataSourceDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +114,15 @@
 				2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */,
 			);
 			path = SectionObjectTests;
+			sourceTree = "<group>";
+		};
+		2DA668F518AD6DF0006D92DE /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				2DA668F918AD728D006D92DE /* SMBaseCollectionViewDataSource.h */,
+				2DA668FA18AD728D006D92DE /* SMBaseCollectionViewDataSource.m */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		2DBC77EB18AD114800F5FEA0 /* TableView */ = {
@@ -253,7 +268,10 @@
 		2DD6BF28189F2161004526DF /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				2DA668F518AD6DF0006D92DE /* CollectionView */,
 				2DBC77EB18AD114800F5FEA0 /* TableView */,
+				2DA668F618AD6E21006D92DE /* SMBaseDataSource.h */,
+				2DA668F718AD6E21006D92DE /* SMBaseDataSource.m */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -365,9 +383,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA668FB18AD728D006D92DE /* SMBaseCollectionViewDataSource.m in Sources */,
 				2DD6BF1C189F1FCD004526DF /* SMTestTableViewCell.m in Sources */,
 				2DD6BEDD189EF829004526DF /* SMAppDelegate.m in Sources */,
 				2DD6BF2E189F2161004526DF /* SMBaseDataProvider.m in Sources */,
+				2DA668F818AD6E21006D92DE /* SMBaseDataSource.m in Sources */,
 				2DD6BED9189EF829004526DF /* main.m in Sources */,
 				2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */,
 				2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */,
