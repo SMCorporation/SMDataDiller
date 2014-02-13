@@ -50,11 +50,10 @@
 
 - (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    if ([cell respondsToSelector:@selector(fillWithObject:)]) {
+    if ([[cell class] conformsToProtocol:@protocol(SMCell)]) {
         id domainObject = [self.dataProvider itemAtIndexPath:indexPath];
         [cell performSelector:@selector(fillWithObject:) withObject:domainObject];
-    }
-    else {
+    } else {
         NSAssert(nil, @"need to implement in subclasses");
     }
 }
