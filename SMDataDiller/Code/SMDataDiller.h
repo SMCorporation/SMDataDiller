@@ -10,6 +10,7 @@
 #define SMDataDiller_SMDataDiller_h
 
 #import "SMCell.h"
+#import "SMSectionObject.h"
 #import "SMBaseDataProvider.h"
 #import "SMBaseTableViewDataSource.h"
 

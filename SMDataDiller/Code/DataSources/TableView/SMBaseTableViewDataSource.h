@@ -23,11 +23,11 @@
 @property (nonatomic, strong) SMBaseDataProvider *dataProvider;
 @property (nonatomic, weak) id<SMBaseTableViewDataSourceDelegate> delegate;
 
-@property (nonatomic, assign) BOOL shouldDeselectCells; //YES by default
+@property (nonatomic, assign) BOOL shouldAutoDeselectCells; // "YES" by default
 
 - (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider tableView:(UITableView *)tableView;
 
-- (NSString *)cellReuseIdentefireAtIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)cellReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath;
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath;
 - (UITableViewCellStyle)cellsStyle;
 

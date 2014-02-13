@@ -10,10 +10,15 @@
 
 @interface SMBaseDataProvider : NSObject
 
-- (NSUInteger)numberOfSections;
-- (NSUInteger)numberOfItemsInSection:(NSUInteger)sectionNumber;
+@property (nonatomic, copy) NSArray *items;
 
-- (id)sectionObjectForSection:(NSUInteger)sectionNumber;
+- (void)initialConfigure;
+
+- (NSUInteger)numberOfSections;
+- (NSUInteger)numberOfItemsInSection:(NSUInteger)section;
+
+- (id)sectionObjectForSection:(NSUInteger)section;
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
+- (NSIndexPath *)indexPathOfItem:(id)item;
 
 @end
