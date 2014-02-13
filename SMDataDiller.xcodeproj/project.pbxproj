@@ -46,6 +46,7 @@
 		2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestSectionObject.m; sourceTree = "<group>"; };
 		2DBC77EC18AD114800F5FEA0 /* SMBaseTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseTableViewDataSource.h; sourceTree = "<group>"; };
 		2DBC77ED18AD114800F5FEA0 /* SMBaseTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseTableViewDataSource.m; sourceTree = "<group>"; };
+		2DBC77EF18AD122100F5FEA0 /* SMBaseDataSourceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMBaseDataSourceDelegate.h; sourceTree = "<group>"; };
 		2DD6BEC9189EF829004526DF /* SMDataDiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMDataDiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6BECC189EF829004526DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DD6BECE189EF829004526DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -262,6 +263,7 @@
 			children = (
 				2DD6BF2C189F2161004526DF /* SMCell.h */,
 				2D3B72F618A67E44001DE6DF /* SMSectionObject.h */,
+				2DBC77EF18AD122100F5FEA0 /* SMBaseDataSourceDelegate.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

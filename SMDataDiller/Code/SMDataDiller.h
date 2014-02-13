@@ -13,5 +13,6 @@
 #import "SMSectionObject.h"
 #import "SMBaseDataProvider.h"
 #import "SMBaseTableViewDataSource.h"
+#import "SMBaseDataSourceDelegate.h"
 
 #endif

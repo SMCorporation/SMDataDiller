@@ -7,21 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SMBaseDataProvider.h"
-
-@protocol SMBaseTableViewDataSourceDelegate <NSObject>
-
-@optional
-- (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;
-
-@end
-
+#import "SMDataDiller.h"
 
 @interface SMBaseTableViewDataSource : NSObject  <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, strong) SMBaseDataProvider *dataProvider;
-@property (nonatomic, weak) id<SMBaseTableViewDataSourceDelegate> delegate;
+@property (nonatomic, weak) id<SMBaseDataSourceDelegate> delegate;
 
 @property (nonatomic, assign) BOOL shouldDeselectCells; //YES by default
 
