@@ -22,7 +22,7 @@
 
 - (void)initialConfigure
 {
-    
+    // there is place for any initial configurations of your dataProvider
 }
 
 - (NSUInteger)numberOfSections
