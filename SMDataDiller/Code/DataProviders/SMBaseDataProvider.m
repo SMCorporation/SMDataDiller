@@ -71,11 +71,11 @@
 
 - (NSIndexPath *)indexPathOfItem:(id)item
 {
-    NSIndexPath *itemIndexPath = [self indexPathForItem:item fromItems:self.items withSetionIndex:0];
+    NSIndexPath *itemIndexPath = [self indexPathForItem:item inItems:self.items withSetionIndex:0];
     if ([self hasSections]) {
         for (int sectionIndex = 0; sectionIndex < self.items.count; sectionIndex++) {
             NSArray *sectionItems = self.items[sectionIndex];
-            NSIndexPath *indexPath = [self indexPathForItem:item fromItems:sectionItems withSetionIndex:sectionIndex];
+            NSIndexPath *indexPath = [self indexPathForItem:item inItems:sectionItems withSetionIndex:sectionIndex];
             if (indexPath) {
                 itemIndexPath = indexPath;
                 break;
@@ -105,7 +105,7 @@
     return [[object class] conformsToProtocol:@protocol(SMSectionObject)];
 }
 
-- (NSIndexPath *)indexPathForItem:(id)item fromItems:(id)items withSetionIndex:(NSUInteger)sectionIndex
+- (NSIndexPath *)indexPathForItem:(id)item inItems:(id)items withSetionIndex:(NSUInteger)sectionIndex
 {
     if ([items isKindOfClass:[NSArray class]]) {
         NSArray *arrItems = (NSArray *)items;
