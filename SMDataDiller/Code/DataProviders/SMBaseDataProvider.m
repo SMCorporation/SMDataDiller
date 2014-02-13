@@ -25,17 +25,6 @@
     
 }
 
-- (BOOL)hasSections
-{
-    if (self.items.count) {
-        id item = [self.items firstObject];
-        if ([item isKindOfClass:[NSArray class]] || [self isSectionObject:item]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
 - (NSUInteger)numberOfSections
 {
     if ([self hasSections]) {
@@ -96,6 +85,17 @@
 
 #pragma mark -
 #pragma mark Help Methods
+
+- (BOOL)hasSections
+{
+    if (self.items.count) {
+        id item = [self.items firstObject];
+        if ([item isKindOfClass:[NSArray class]] || [self isSectionObject:item]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 
 - (NSIndexPath *)indexPathForItem:(id)item fromItems:(id)items withSetionIndex:(NSUInteger)sectionIndex
 {
