@@ -37,8 +37,7 @@
 
 - (void)reload
 {
-    [super reload];
-    
+    [super reload];    
     [self.collectionView reloadData];
 }
 
@@ -52,11 +51,9 @@
     NSDictionary *classesOrNibs = [self classesAndNibsForRegistration];
     if (classesOrNibs.count) {
         for (NSString *cellReuseIdentifier in classesOrNibs) {
-            
             NSArray *cellsNibsOrClasses = [classesOrNibs valueForKey:cellReuseIdentifier];
             for (id classOrNib in cellsNibsOrClasses) {
                 if ([classOrNib isKindOfClass:[NSString class]]) {
-                    
                     UINib *cellNib = [UINib nibWithNibName:classOrNib bundle:[NSBundle mainBundle]];
                     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:cellReuseIdentifier];
                 } else {
@@ -122,21 +119,19 @@
 - (NSDictionary *)classesAndNibsForRegistration
 {
     NSDictionary *cellsNibsOrClassesDictionary = [NSMutableDictionary new];
-    
     for (int sectionIndex = 0; sectionIndex < [self.dataProvider numberOfSections]; sectionIndex++) {
         for (int rowIndex = 0; rowIndex < [self.dataProvider numberOfItemsInSection:sectionIndex]; rowIndex++) {
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
             NSString *cellReuseIdentifier = [self cellReuseIdentifierAtIndexPath:indexPath];
-            
+            Class cellClass = [self classForCellAtIndexPath:indexPath];
+            NSString *nibName = NSStringFromClass(cellClass);
             NSMutableSet *cellsSet = [cellsNibsOrClassesDictionary valueForKey:cellReuseIdentifier];
+            
             if (!cellsSet) {
                 cellsSet = [NSMutableSet new];
                 [cellsNibsOrClassesDictionary setValue:cellsSet forKey:cellReuseIdentifier];
             }
-            
-            Class cellClass = [self classForCellAtIndexPath:indexPath];
-            NSString *nibName = NSStringFromClass(cellClass);
             
             if (nibName.length && cellClass != [UICollectionViewCell class]) {
                 [cellsSet addObject:nibName];
