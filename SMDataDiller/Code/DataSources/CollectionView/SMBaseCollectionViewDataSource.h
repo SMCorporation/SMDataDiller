@@ -12,4 +12,6 @@
 
 @property (nonatomic, weak) UICollectionView *collectionView;
 
+- (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider collectionView:(UICollectionView *)collectionView;
+
 @end

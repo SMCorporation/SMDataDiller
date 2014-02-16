@@ -29,6 +29,11 @@
 		2DD6BF1E189F1FCD004526DF /* SMSMTestTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF17189F1FCD004526DF /* SMSMTestTableDataSource.m */; };
 		2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF1B189F1FCD004526DF /* SMTestTableViewController.m */; };
 		2DD6BF2E189F2161004526DF /* SMBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF27189F2161004526DF /* SMBaseDataProvider.m */; };
+		2DF3B3C518B0E5540063DE46 /* SMTestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3C418B0E5540063DE46 /* SMTestCollectionViewController.m */; };
+		2DF3B3C918B0E5AD0063DE46 /* SMTestCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3C818B0E5AD0063DE46 /* SMTestCollectionViewDataSource.m */; };
+		2DF3B3CD18B0F64A0063DE46 /* SMCollectionViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3CC18B0F64A0063DE46 /* SMCollectionViewCell1.m */; };
+		2DF3B3CF18B0F6630063DE46 /* SMCollectionViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF3B3CE18B0F6630063DE46 /* SMCollectionViewCell1.xib */; };
+		2DF3B3D418B0FB000063DE46 /* NSIndexPath+SMIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3D318B0FB000063DE46 /* NSIndexPath+SMIndexPath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,16 @@
 		2DD6BF27189F2161004526DF /* SMBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseDataProvider.m; sourceTree = "<group>"; };
 		2DD6BF2C189F2161004526DF /* SMCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCell.h; sourceTree = "<group>"; };
 		2DD6BF2D189F2161004526DF /* SMDataDiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDataDiller.h; sourceTree = "<group>"; };
+		2DF3B3C318B0E5540063DE46 /* SMTestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestCollectionViewController.h; sourceTree = "<group>"; };
+		2DF3B3C418B0E5540063DE46 /* SMTestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestCollectionViewController.m; sourceTree = "<group>"; };
+		2DF3B3C718B0E5AD0063DE46 /* SMTestCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestCollectionViewDataSource.h; sourceTree = "<group>"; };
+		2DF3B3C818B0E5AD0063DE46 /* SMTestCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestCollectionViewDataSource.m; sourceTree = "<group>"; };
+		2DF3B3CB18B0F64A0063DE46 /* SMCollectionViewCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCollectionViewCell1.h; sourceTree = "<group>"; };
+		2DF3B3CC18B0F64A0063DE46 /* SMCollectionViewCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCollectionViewCell1.m; sourceTree = "<group>"; };
+		2DF3B3CE18B0F6630063DE46 /* SMCollectionViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMCollectionViewCell1.xib; sourceTree = "<group>"; };
+		2DF3B3D218B0FB000063DE46 /* NSIndexPath+SMIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+SMIndexPath.h"; sourceTree = "<group>"; };
+		2DF3B3D318B0FB000063DE46 /* NSIndexPath+SMIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+SMIndexPath.m"; sourceTree = "<group>"; };
+		2DF3B3D518B0FB2F0063DE46 /* SMCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMCategories.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +225,7 @@
 		2DD6BF0F189F1FCD004526DF /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				2DF3B3C218B0E4B60063DE46 /* CollectionView */,
 				2DD6BF10189F1FCD004526DF /* TableView */,
 			);
 			path = Examples;
@@ -248,6 +264,7 @@
 		2DD6BF24189F2161004526DF /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				2DF3B3D018B0FAD00063DE46 /* Categories */,
 				2DD6BF25189F2161004526DF /* DataProviders */,
 				2DD6BF28189F2161004526DF /* DataSources */,
 				2DD6BF2B189F2161004526DF /* Protocols */,
@@ -284,6 +301,54 @@
 				2DBC77EF18AD122100F5FEA0 /* SMBaseDataSourceDelegate.h */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2DF3B3C218B0E4B60063DE46 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				2DF3B3CA18B0F6340063DE46 /* Cells */,
+				2DF3B3C618B0E5970063DE46 /* DataDillers */,
+				2DF3B3C318B0E5540063DE46 /* SMTestCollectionViewController.h */,
+				2DF3B3C418B0E5540063DE46 /* SMTestCollectionViewController.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		2DF3B3C618B0E5970063DE46 /* DataDillers */ = {
+			isa = PBXGroup;
+			children = (
+				2DF3B3C718B0E5AD0063DE46 /* SMTestCollectionViewDataSource.h */,
+				2DF3B3C818B0E5AD0063DE46 /* SMTestCollectionViewDataSource.m */,
+			);
+			path = DataDillers;
+			sourceTree = "<group>";
+		};
+		2DF3B3CA18B0F6340063DE46 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2DF3B3CB18B0F64A0063DE46 /* SMCollectionViewCell1.h */,
+				2DF3B3CC18B0F64A0063DE46 /* SMCollectionViewCell1.m */,
+				2DF3B3CE18B0F6630063DE46 /* SMCollectionViewCell1.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2DF3B3D018B0FAD00063DE46 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2DF3B3D118B0FAD00063DE46 /* NSIndexPath */,
+				2DF3B3D518B0FB2F0063DE46 /* SMCategories.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		2DF3B3D118B0FAD00063DE46 /* NSIndexPath */ = {
+			isa = PBXGroup;
+			children = (
+				2DF3B3D218B0FB000063DE46 /* NSIndexPath+SMIndexPath.h */,
+				2DF3B3D318B0FB000063DE46 /* NSIndexPath+SMIndexPath.m */,
+			);
+			path = NSIndexPath;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +429,7 @@
 			files = (
 				2DD6BED7189EF829004526DF /* InfoPlist.strings in Resources */,
 				2DD6BF1D189F1FCD004526DF /* SMTestTableViewCell.xib in Resources */,
+				2DF3B3CF18B0F6630063DE46 /* SMCollectionViewCell1.xib in Resources */,
 				2DD6BEDF189EF829004526DF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,8 +449,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF3B3C918B0E5AD0063DE46 /* SMTestCollectionViewDataSource.m in Sources */,
 				2DA668FB18AD728D006D92DE /* SMBaseCollectionViewDataSource.m in Sources */,
+				2DF3B3D418B0FB000063DE46 /* NSIndexPath+SMIndexPath.m in Sources */,
+				2DF3B3CD18B0F64A0063DE46 /* SMCollectionViewCell1.m in Sources */,
 				2DD6BF1C189F1FCD004526DF /* SMTestTableViewCell.m in Sources */,
+				2DF3B3C518B0E5540063DE46 /* SMTestCollectionViewController.m in Sources */,
 				2DD6BEDD189EF829004526DF /* SMAppDelegate.m in Sources */,
 				2DD6BF2E189F2161004526DF /* SMBaseDataProvider.m in Sources */,
 				2DA668F818AD6E21006D92DE /* SMBaseDataSource.m in Sources */,

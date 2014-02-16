@@ -15,7 +15,4 @@
 
 - (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider tableView:(UITableView *)tableView;
 
-- (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath;
-- (void)setupCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-
 @end

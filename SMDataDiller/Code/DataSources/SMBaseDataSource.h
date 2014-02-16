@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SMBaseDataSourceDelegate.h"
+#import "SMBaseDataProvider.h"
 
-@class SMBaseDataProvider;
 
 @interface SMBaseDataSource : NSObject
 
@@ -21,8 +21,11 @@
 - (void)initialConfigure;
 - (void)reload;
 
+- (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)cellReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath;
+
 - (void)fillCell:(id)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)setupCell:(id)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

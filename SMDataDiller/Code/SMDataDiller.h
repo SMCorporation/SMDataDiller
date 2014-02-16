@@ -9,6 +9,8 @@
 #ifndef SMDataDiller_SMDataDiller_h
 #define SMDataDiller_SMDataDiller_h
 
+#import "SMCategories.h"
+
 #import "SMCell.h"
 #import "SMSectionObject.h"
 #import "SMBaseDataProvider.h"

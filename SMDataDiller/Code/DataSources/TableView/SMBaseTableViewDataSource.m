@@ -14,20 +14,23 @@
 
 @implementation SMBaseTableViewDataSource
 
-- (void)initialConfigure
-{
-    self.shouldAutoDeselectCells = YES;
-    self.cellsStyle = UITableViewCellStyleDefault;
-}
-
 - (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider tableView:(UITableView *)tableView
 {
     self = [self init];
     if (self) {
         self.dataProvider = dataProvider;
         self.tableView = tableView;
+        
+        [self initialConfigure];
     }
     return self;
+}
+
+- (void)initialConfigure
+{
+    [super initialConfigure];
+    
+    self.cellsStyle = UITableViewCellStyleDefault;
 }
 
 - (void)setTableView:(UITableView *)tableView
@@ -44,11 +47,6 @@
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath
 {
     return [UITableViewCell class];
-}
-
-- (void)setupCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    //any things to setup cell (called once)
 }
 
 - (void)reload
