@@ -19,9 +19,7 @@
     self = [self init];
     if (self) {
         self.dataProvider = dataProvider;
-        self.tableView = tableView;
-        
-        [self initialConfigure];
+        self.tableView = tableView;        
     }
     return self;
 }

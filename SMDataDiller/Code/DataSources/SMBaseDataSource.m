@@ -11,6 +11,15 @@
 
 @implementation SMBaseDataSource
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self initialConfigure];
+    }
+    return self;
+}
+
 - (void)initialConfigure
 {
     self.shouldAutoDeselectCells = YES;

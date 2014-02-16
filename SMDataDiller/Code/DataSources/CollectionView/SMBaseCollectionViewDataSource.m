@@ -18,24 +18,17 @@
     if (self) {
         self.dataProvider = dataProvider;
         self.collectionView = collectionView;
-        
-        [self initialConfigure];
     }
     return self;
-}
-
-- (void)initialConfigure
-{
-    [super initialConfigure];
-    
-    [self registerCells];
 }
 
 - (void)setCollectionView:(UICollectionView *)collectionView
 {
     _collectionView = collectionView;
     _collectionView.delegate = self;
-    _collectionView.dataSource = self;    
+    _collectionView.dataSource = self;
+    
+    [self registerCells];
 }
 
 
