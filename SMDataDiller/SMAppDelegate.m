@@ -7,15 +7,17 @@
 //
 
 #import "SMAppDelegate.h"
-#import "SMTestTableViewController.h" // TEST1
+#import "SMTestTableViewController.h"       // EXAMPLE 1
+#import "SMTestCollectionViewController.h"  // EXAMPLE 2
 
+static NSUInteger const kExampleNumber = 2;
 
 @implementation SMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [self createRootVCForTest:1];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[self createRootVCForTest:kExampleNumber]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -26,7 +28,11 @@
     UIViewController *result = nil;
     switch (testNumber) {
         case 1:
-            result = [SMTestTableViewController new]; //test1 (tableView)
+            result = [SMTestTableViewController new]; //example1 (tableView)
+            break;
+            
+        case 2:
+            result = [SMTestCollectionViewController new]; //example2 (collectionView)
             break;
             
         default:

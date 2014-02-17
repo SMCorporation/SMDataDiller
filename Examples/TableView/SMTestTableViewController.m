@@ -9,9 +9,9 @@
 #import "SMTestTableViewController.h"
 
 #import "SMSMTestTableDataSource.h"
-#import "SMBaseDataProvider.h"
+#import "SMDataDiller.h"
 
-@interface SMTestTableViewController () <SMBaseTableViewDataSourceDelegate>
+@interface SMTestTableViewController () <SMDataSourceDelegate>
 
 @property (nonatomic, strong) SMSMTestTableDataSource *dataSource;
 
