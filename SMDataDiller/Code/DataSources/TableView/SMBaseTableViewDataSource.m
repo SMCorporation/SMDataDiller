@@ -8,7 +8,7 @@
 
 #import "SMBaseTableViewDataSource.h"
 #import "SMCell.h"
-#import "SMBaseDataSourceDelegate.h"
+#import "SMDataSourceDelegate.h"
 #import "SMBaseDataProvider.h"
 
 
@@ -27,8 +27,6 @@
 - (void)initialConfigure
 {
     [super initialConfigure];
-    
-    self.cellsStyle = UITableViewCellStyleDefault;
 }
 
 - (void)setTableView:(UITableView *)tableView

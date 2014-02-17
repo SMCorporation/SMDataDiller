@@ -15,6 +15,7 @@
 {
     self = [super init];
     if (self) {
+        self.shouldAutoDeselectCells = YES;
         [self initialConfigure];
     }
     return self;
@@ -22,7 +23,6 @@
 
 - (void)initialConfigure
 {
-    self.shouldAutoDeselectCells = YES;
     
     // there is place for any initial configurations of your dataSource
 }

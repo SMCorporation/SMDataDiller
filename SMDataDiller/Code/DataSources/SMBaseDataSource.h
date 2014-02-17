@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SMBaseDataSourceDelegate.h"
+#import "SMDataSourceDelegate.h"
 #import "SMBaseDataProvider.h"
 
 
 @interface SMBaseDataSource : NSObject
 
 @property (nonatomic, strong) SMBaseDataProvider *dataProvider;
-@property (nonatomic, weak) id<SMBaseDataSourceDelegate> delegate;
+@property (nonatomic, weak) id<SMDataSourceDelegate> delegate;
 
 @property (nonatomic, assign) BOOL shouldAutoDeselectCells;     // "YES" by default
 

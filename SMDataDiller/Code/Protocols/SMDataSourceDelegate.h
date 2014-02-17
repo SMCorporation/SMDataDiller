@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SMBaseDataSourceDelegate <NSObject>
+@protocol SMDataSourceDelegate <NSObject>
 
 @optional
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;

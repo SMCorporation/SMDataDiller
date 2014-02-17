@@ -10,7 +10,7 @@
 #import "SMDataDiller.h"
 #import "SMTestCollectionViewDataSource.h"
 
-@interface SMTestCollectionViewController () <SMBaseDataSourceDelegate>
+@interface SMTestCollectionViewController () <SMDataSourceDelegate>
 
 @property (nonatomic, strong) SMTestCollectionViewDataSource *collectionViewDataSource;
 
