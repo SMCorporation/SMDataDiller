@@ -32,13 +32,13 @@
     self = [super init];
     if (self) {
         self.managedOjectContext = managedOjectContext;
+        [self configureFetchedProvider];
     }
     return self;
 }
 
-- (void)initialConfigure
+- (void)configureFetchedProvider
 {
-    [super initialConfigure];
     self.fetchedDataProvider = [[SMFetchedDataProvider alloc] initWithFetchRequest:self.fetchRequest
                                                                            groupBy:self.sectionNameKeyPath
                                                              inManagedOjectContext:self.managedOjectContext
