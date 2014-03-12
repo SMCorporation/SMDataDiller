@@ -1,14 +1,14 @@
 //
-//  SMSectionObject.h
+//  SMSectionObjectProtocol.h
 //  SMDataDiller
 //
-//  Created by Max Kuznetsov on 08.02.14.
+//  Created by Sergey Pirogov on 12.03.14.
 //  Copyright (c) 2014 SM. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@protocol SMSectionObject <NSObject>
+@protocol SMSectionObjectProtocol <NSObject>
 
 - (NSUInteger)itemsCount;
 - (id)itemForRow:(NSUInteger)row;

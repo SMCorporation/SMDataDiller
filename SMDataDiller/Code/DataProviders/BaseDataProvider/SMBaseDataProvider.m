@@ -7,7 +7,7 @@
 //
 
 #import "SMBaseDataProvider.h"
-#import "SMSectionObject.h"
+#import "SMSectionObjectProtocol.h"
 
 @implementation SMBaseDataProvider
 
@@ -102,7 +102,7 @@
 
 - (BOOL)isSectionObject:(id)object
 {
-    return [[object class] conformsToProtocol:@protocol(SMSectionObject)];
+    return [[object class] conformsToProtocol:@protocol(SMSectionObjectProtocol)];
 }
 
 - (NSIndexPath *)indexPathForItem:(id)item inItems:(id)items withSetionIndex:(NSUInteger)sectionIndex
@@ -116,7 +116,7 @@
             }
         }
     } else if ([self isSectionObject:items]) {
-        id<SMSectionObject> sectionObject = items;
+        id<SMSectionObjectProtocol> sectionObject = items;
         NSUInteger itemIndex = [sectionObject rowForItem:item];
         if (itemIndex != NSNotFound) {
             return [NSIndexPath indexPathForRow:itemIndex inSection:sectionIndex];

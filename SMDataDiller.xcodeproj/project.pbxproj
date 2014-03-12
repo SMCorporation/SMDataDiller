@@ -28,12 +28,16 @@
 		2DD6BF1D189F1FCD004526DF /* SMTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6BF14189F1FCD004526DF /* SMTestTableViewCell.xib */; };
 		2DD6BF1E189F1FCD004526DF /* SMSMTestTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF17189F1FCD004526DF /* SMSMTestTableDataSource.m */; };
 		2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF1B189F1FCD004526DF /* SMTestTableViewController.m */; };
-		2DD6BF2E189F2161004526DF /* SMBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6BF27189F2161004526DF /* SMBaseDataProvider.m */; };
 		2DF3B3C518B0E5540063DE46 /* SMTestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3C418B0E5540063DE46 /* SMTestCollectionViewController.m */; };
 		2DF3B3C918B0E5AD0063DE46 /* SMTestCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3C818B0E5AD0063DE46 /* SMTestCollectionViewDataSource.m */; };
 		2DF3B3CD18B0F64A0063DE46 /* SMCollectionViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3CC18B0F64A0063DE46 /* SMCollectionViewCell1.m */; };
 		2DF3B3CF18B0F6630063DE46 /* SMCollectionViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF3B3CE18B0F6630063DE46 /* SMCollectionViewCell1.xib */; };
 		2DF3B3D418B0FB000063DE46 /* NSIndexPath+SMIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF3B3D318B0FB000063DE46 /* NSIndexPath+SMIndexPath.m */; };
+		30331FC418D0CAC8008850CF /* SMFetchedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 30331FC318D0CAC8008850CF /* SMFetchedDataProvider.m */; };
+		30331FC618D0CB24008850CF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30331FC518D0CB24008850CF /* CoreData.framework */; };
+		30331FCB18D0CD4F008850CF /* SMBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 30331FCA18D0CD4F008850CF /* SMBaseDataProvider.m */; };
+		30331FCE18D0CDB3008850CF /* SMBaseCoreDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 30331FCD18D0CDB3008850CF /* SMBaseCoreDataProvider.m */; };
+		30331FD318D0D12E008850CF /* SMSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 30331FD218D0D12E008850CF /* SMSectionObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D3B72F618A67E44001DE6DF /* SMSectionObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMSectionObject.h; sourceTree = "<group>"; };
 		2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSectionObjectTests.m; sourceTree = "<group>"; };
 		2D3B72FC18A6AE56001DE6DF /* SMTestSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestSectionObject.h; sourceTree = "<group>"; };
 		2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestSectionObject.m; sourceTree = "<group>"; };
@@ -81,8 +84,6 @@
 		2DD6BF17189F1FCD004526DF /* SMSMTestTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSMTestTableDataSource.m; sourceTree = "<group>"; };
 		2DD6BF1A189F1FCD004526DF /* SMTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestTableViewController.h; sourceTree = "<group>"; };
 		2DD6BF1B189F1FCD004526DF /* SMTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestTableViewController.m; sourceTree = "<group>"; };
-		2DD6BF26189F2161004526DF /* SMBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseDataProvider.h; sourceTree = "<group>"; };
-		2DD6BF27189F2161004526DF /* SMBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseDataProvider.m; sourceTree = "<group>"; };
 		2DD6BF2C189F2161004526DF /* SMCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCell.h; sourceTree = "<group>"; };
 		2DD6BF2D189F2161004526DF /* SMDataDiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDataDiller.h; sourceTree = "<group>"; };
 		2DF3B3C318B0E5540063DE46 /* SMTestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestCollectionViewController.h; sourceTree = "<group>"; };
@@ -95,6 +96,16 @@
 		2DF3B3D218B0FB000063DE46 /* NSIndexPath+SMIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+SMIndexPath.h"; sourceTree = "<group>"; };
 		2DF3B3D318B0FB000063DE46 /* NSIndexPath+SMIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+SMIndexPath.m"; sourceTree = "<group>"; };
 		2DF3B3D518B0FB2F0063DE46 /* SMCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMCategories.h; sourceTree = "<group>"; };
+		30331FC218D0CAC8008850CF /* SMFetchedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMFetchedDataProvider.h; sourceTree = "<group>"; };
+		30331FC318D0CAC8008850CF /* SMFetchedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMFetchedDataProvider.m; sourceTree = "<group>"; };
+		30331FC518D0CB24008850CF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		30331FC918D0CD4F008850CF /* SMBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseDataProvider.h; sourceTree = "<group>"; };
+		30331FCA18D0CD4F008850CF /* SMBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseDataProvider.m; sourceTree = "<group>"; };
+		30331FCC18D0CDB3008850CF /* SMBaseCoreDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseCoreDataProvider.h; sourceTree = "<group>"; };
+		30331FCD18D0CDB3008850CF /* SMBaseCoreDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseCoreDataProvider.m; sourceTree = "<group>"; };
+		30331FD118D0D12E008850CF /* SMSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSectionObject.h; sourceTree = "<group>"; };
+		30331FD218D0D12E008850CF /* SMSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSectionObject.m; sourceTree = "<group>"; };
+		30331FD418D0D1A0008850CF /* SMSectionObjectProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMSectionObjectProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30331FC618D0CB24008850CF /* CoreData.framework in Frameworks */,
 				2DD6BECF189EF829004526DF /* CoreGraphics.framework in Frameworks */,
 				2DD6BED1189EF829004526DF /* UIKit.framework in Frameworks */,
 				2DD6BECD189EF829004526DF /* Foundation.framework in Frameworks */,
@@ -172,6 +184,7 @@
 		2DD6BECB189EF829004526DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30331FC518D0CB24008850CF /* CoreData.framework */,
 				2DD6BECC189EF829004526DF /* Foundation.framework */,
 				2DD6BECE189EF829004526DF /* CoreGraphics.framework */,
 				2DD6BED0189EF829004526DF /* UIKit.framework */,
@@ -264,6 +277,7 @@
 		2DD6BF24189F2161004526DF /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				30331FCF18D0D0CA008850CF /* DillerObjects */,
 				2DF3B3D018B0FAD00063DE46 /* Categories */,
 				2DD6BF25189F2161004526DF /* DataProviders */,
 				2DD6BF28189F2161004526DF /* DataSources */,
@@ -276,8 +290,9 @@
 		2DD6BF25189F2161004526DF /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
-				2DD6BF26189F2161004526DF /* SMBaseDataProvider.h */,
-				2DD6BF27189F2161004526DF /* SMBaseDataProvider.m */,
+				30331FC818D0CD4F008850CF /* BaseDataProvider */,
+				30331FC718D0CD2D008850CF /* BaseCoreDataProvider */,
+				30331FC118D0CA9C008850CF /* FetchedDataProvider */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
@@ -297,8 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				2DD6BF2C189F2161004526DF /* SMCell.h */,
-				2D3B72F618A67E44001DE6DF /* SMSectionObject.h */,
 				2DBC77EF18AD122100F5FEA0 /* SMDataSourceDelegate.h */,
+				30331FD418D0D1A0008850CF /* SMSectionObjectProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -351,6 +366,50 @@
 			path = NSIndexPath;
 			sourceTree = "<group>";
 		};
+		30331FC118D0CA9C008850CF /* FetchedDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				30331FC218D0CAC8008850CF /* SMFetchedDataProvider.h */,
+				30331FC318D0CAC8008850CF /* SMFetchedDataProvider.m */,
+			);
+			path = FetchedDataProvider;
+			sourceTree = "<group>";
+		};
+		30331FC718D0CD2D008850CF /* BaseCoreDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				30331FCC18D0CDB3008850CF /* SMBaseCoreDataProvider.h */,
+				30331FCD18D0CDB3008850CF /* SMBaseCoreDataProvider.m */,
+			);
+			path = BaseCoreDataProvider;
+			sourceTree = "<group>";
+		};
+		30331FC818D0CD4F008850CF /* BaseDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				30331FC918D0CD4F008850CF /* SMBaseDataProvider.h */,
+				30331FCA18D0CD4F008850CF /* SMBaseDataProvider.m */,
+			);
+			path = BaseDataProvider;
+			sourceTree = "<group>";
+		};
+		30331FCF18D0D0CA008850CF /* DillerObjects */ = {
+			isa = PBXGroup;
+			children = (
+				30331FD018D0D11D008850CF /* SectionObject */,
+			);
+			path = DillerObjects;
+			sourceTree = "<group>";
+		};
+		30331FD018D0D11D008850CF /* SectionObject */ = {
+			isa = PBXGroup;
+			children = (
+				30331FD118D0D12E008850CF /* SMSectionObject.h */,
+				30331FD218D0D12E008850CF /* SMSectionObject.m */,
+			);
+			path = SectionObject;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -396,7 +455,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SM;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = SM;
 				TargetAttributes = {
 					2DD6BEE3189EF829004526DF = {
@@ -449,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30331FCE18D0CDB3008850CF /* SMBaseCoreDataProvider.m in Sources */,
 				2DF3B3C918B0E5AD0063DE46 /* SMTestCollectionViewDataSource.m in Sources */,
 				2DA668FB18AD728D006D92DE /* SMBaseCollectionViewDataSource.m in Sources */,
 				2DF3B3D418B0FB000063DE46 /* NSIndexPath+SMIndexPath.m in Sources */,
@@ -456,9 +516,11 @@
 				2DD6BF1C189F1FCD004526DF /* SMTestTableViewCell.m in Sources */,
 				2DF3B3C518B0E5540063DE46 /* SMTestCollectionViewController.m in Sources */,
 				2DD6BEDD189EF829004526DF /* SMAppDelegate.m in Sources */,
-				2DD6BF2E189F2161004526DF /* SMBaseDataProvider.m in Sources */,
+				30331FD318D0D12E008850CF /* SMSectionObject.m in Sources */,
 				2DA668F818AD6E21006D92DE /* SMBaseDataSource.m in Sources */,
 				2DD6BED9189EF829004526DF /* main.m in Sources */,
+				30331FCB18D0CD4F008850CF /* SMBaseDataProvider.m in Sources */,
+				30331FC418D0CAC8008850CF /* SMFetchedDataProvider.m in Sources */,
 				2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */,
 				2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */,
 				2DD6BF1E189F1FCD004526DF /* SMSMTestTableDataSource.m in Sources */,
@@ -509,7 +571,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -548,7 +609,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -606,7 +666,6 @@
 		2DD6BEF9189EF829004526DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SMDataDiller.app/SMDataDiller";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -629,7 +688,6 @@
 		2DD6BEFA189EF829004526DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SMDataDiller.app/SMDataDiller";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
