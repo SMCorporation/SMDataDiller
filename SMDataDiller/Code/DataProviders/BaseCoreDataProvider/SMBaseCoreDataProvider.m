@@ -106,6 +106,9 @@
 
 - (void)reload
 {
+    if (self.shouldRecreateFetchDataProviderBeforeReload) {
+        [self configureFetchedProvider];
+    }
     [self.fetchedDataProvider reload];
 }
 

@@ -26,6 +26,7 @@
 @property (nonatomic, strong) NSFetchRequest *fetchRequest;
 
 @property (nonatomic, weak) id<SMCoreDataProviderDelegate> delegate;
+@property (nonatomic, assign) BOOL shouldRecreateFetchDataProviderBeforeReload;
 
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedOjectContext; //use this INSTEAD simple "init"
 - (void)save;
