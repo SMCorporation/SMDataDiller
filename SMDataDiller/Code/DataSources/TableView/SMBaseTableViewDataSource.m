@@ -7,6 +7,7 @@
 //
 
 #import "SMBaseTableViewDataSource.h"
+#import "SMBaseDataSource+PrivateAddons.h"
 #import "SMCell.h"
 #import "SMDataSourceDelegate.h"
 #import "SMBaseDataProvider.h"
@@ -71,7 +72,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentefier];
     if (!cell) {
         Class cellClass = [self classForCellAtIndexPath:indexPath];
-        if(!(cell = [self loadNibForClass:cellClass])) {
+        if(!(cell = (UITableViewCell *)[self loadNibForClass:cellClass])) {
             cell = [[cellClass alloc] initWithStyle:self.cellsStyle reuseIdentifier:cellReuseIdentefier];
         }
         [self setupCell:cell atIndexPath:indexPath];
@@ -79,6 +80,11 @@
     
     [self fillCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self sizeForCellAtIndexPath:indexPath].height;
 }
 
 
@@ -93,17 +99,5 @@
     [self didSelectedRowAtIndexPath:indexPath];
 }
 
-
-#pragma mark -
-#pragma mark Helpers
-
-- (UITableViewCell *)loadNibForClass:(Class)className
-{
-    NSString *classString = NSStringFromClass(className);
-    if ([[NSBundle mainBundle] pathForResource:classString ofType:@"nib"].length) {
-        return (UITableViewCell *)[[[NSBundle mainBundle] loadNibNamed:classString owner:nil options:nil] firstObject];
-    }
-    return nil;
-}
 
 @end

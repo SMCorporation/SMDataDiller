@@ -7,6 +7,7 @@
 //
 
 #import "SMBaseDataSource.h"
+#import "SMBaseDataSource+PrivateAddons.h"
 #import "SMCell.h"
 
 @implementation SMBaseDataSource
@@ -23,7 +24,6 @@
 
 - (void)initialConfigure
 {
-    
     // there is place for any initial configurations of your dataSource
 }
 
@@ -45,6 +45,18 @@
 {
     NSString *prefix = NSStringFromClass(self.class);
     return [NSString stringWithFormat:@"%@%@", prefix, @"CellReuseIdentefier"];
+}
+
+- (CGSize)sizeForCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    Class cellClass = [self classForCellAtIndexPath:indexPath];
+    UIView *view = [self loadNibForClass:cellClass];
+    if(view) {
+        return view.frame.size;
+    } else if ([cellClass respondsToSelector:@selector(size)]) {
+        return [cellClass size];
+    }
+    return CGSizeZero;
 }
 
 - (void)setupCell:(id)cell atIndexPath:(NSIndexPath *)indexPath

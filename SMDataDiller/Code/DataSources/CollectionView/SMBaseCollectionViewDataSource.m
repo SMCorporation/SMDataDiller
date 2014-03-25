@@ -10,6 +10,8 @@
 #import "SMBaseDataProvider.h"
 #import "NSIndexPath+SMIndexPath.h"
 
+static CGFloat const kDefaultSize = 60;
+
 @implementation SMBaseCollectionViewDataSource
 
 - (id)initWithDataProvider:(SMBaseDataProvider *)dataProvider collectionView:(UICollectionView *)collectionView
@@ -68,6 +70,14 @@
     }
 }
 
+- (CGSize)sizeForCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize size = [super sizeForCellAtIndexPath:indexPath];
+    if (CGSizeEqualToSize(size, CGSizeZero)) {
+        size = CGSizeMake(kDefaultSize, kDefaultSize);
+    }
+    return size;
+}
 
 #pragma mark -
 #pragma mark UICollectionViewDataSource
@@ -91,6 +101,13 @@
     return collectionViewCell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self sizeForCellAtIndexPath:indexPath];
+}
+
 
 #pragma mark -
 #pragma mark UICollectionViewDelegate
@@ -106,15 +123,6 @@
 
 #pragma mark -
 #pragma mark Helpers
-
-- (UICollectionViewCell *)loadNibForClass:(Class)className
-{
-    NSString *classString = NSStringFromClass(className);
-    if ([[NSBundle mainBundle] pathForResource:classString ofType:@"nib"].length) {
-        return (UICollectionViewCell *)[[[NSBundle mainBundle] loadNibNamed:classString owner:nil options:nil] firstObject];
-    }
-    return nil;
-}
 
 - (NSDictionary *)classesAndNibsForRegistration
 {

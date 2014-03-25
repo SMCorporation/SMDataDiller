@@ -11,15 +11,13 @@
 
 @implementation SMSMTestTableDataSource
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGSize)sizeForCellAtIndexPath:(NSIndexPath *)indexPath
 {
+    CGSize size = [super sizeForCellAtIndexPath:indexPath];
     CGFloat cellsCount = [self.dataProvider numberOfItemsInSection:indexPath.section];
-    return tableView.frame.size.height/cellsCount;
+    size.height = self.tableView.frame.size.height / cellsCount;
+    return size;
 }
-
-
-#pragma mark -
-#pragma mark Overriding Parent Methods
 
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath
 {

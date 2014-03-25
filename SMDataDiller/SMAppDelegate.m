@@ -10,7 +10,7 @@
 #import "SMTestTableViewController.h"       // EXAMPLE 1
 #import "SMTestCollectionViewController.h"  // EXAMPLE 2
 
-static NSUInteger const kExampleNumber = 2;
+static NSUInteger const kExampleNumber = 1;
 
 @implementation SMAppDelegate
 

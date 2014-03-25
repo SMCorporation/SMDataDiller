@@ -28,4 +28,6 @@
 - (void)setupCell:(id)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
 
+- (CGSize)sizeForCellAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
