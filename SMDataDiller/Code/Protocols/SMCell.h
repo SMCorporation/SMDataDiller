@@ -10,6 +10,7 @@
 
 @protocol SMCell <NSObject>
 
++ (CGSize)size;
 - (void)fillWithObject:(id)domainObject;
 
 @end

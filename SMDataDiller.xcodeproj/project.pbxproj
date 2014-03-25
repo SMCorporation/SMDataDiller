@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D3B72FB18A6AE3E001DE6DF /* SMSectionObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */; };
 		2D3B72FE18A6AE56001DE6DF /* SMTestSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */; };
+		2DA1E39A18E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E39918E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.m */; };
 		2DA668F818AD6E21006D92DE /* SMBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA668F718AD6E21006D92DE /* SMBaseDataSource.m */; };
 		2DA668FB18AD728D006D92DE /* SMBaseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA668FA18AD728D006D92DE /* SMBaseCollectionViewDataSource.m */; };
 		2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC77ED18AD114800F5FEA0 /* SMBaseTableViewDataSource.m */; };
@@ -54,6 +55,8 @@
 		2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSectionObjectTests.m; sourceTree = "<group>"; };
 		2D3B72FC18A6AE56001DE6DF /* SMTestSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestSectionObject.h; sourceTree = "<group>"; };
 		2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestSectionObject.m; sourceTree = "<group>"; };
+		2DA1E39818E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SMBaseDataSource+PrivateAddons.h"; sourceTree = "<group>"; };
+		2DA1E39918E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SMBaseDataSource+PrivateAddons.m"; sourceTree = "<group>"; };
 		2DA668F618AD6E21006D92DE /* SMBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseDataSource.h; sourceTree = "<group>"; };
 		2DA668F718AD6E21006D92DE /* SMBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseDataSource.m; sourceTree = "<group>"; };
 		2DA668F918AD728D006D92DE /* SMBaseCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseCollectionViewDataSource.h; sourceTree = "<group>"; };
@@ -141,6 +144,15 @@
 				2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */,
 			);
 			path = SectionObjectTests;
+			sourceTree = "<group>";
+		};
+		2DA1E39718E1AF2F00C06930 /* BaseDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				2DA1E39818E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.h */,
+				2DA1E39918E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.m */,
+			);
+			path = BaseDataSource;
 			sourceTree = "<group>";
 		};
 		2DA668F518AD6DF0006D92DE /* CollectionView */ = {
@@ -351,6 +363,7 @@
 		2DF3B3D018B0FAD00063DE46 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2DA1E39718E1AF2F00C06930 /* BaseDataSource */,
 				2DF3B3D118B0FAD00063DE46 /* NSIndexPath */,
 				2DF3B3D518B0FB2F0063DE46 /* SMCategories.h */,
 			);
@@ -520,6 +533,7 @@
 				2DA668F818AD6E21006D92DE /* SMBaseDataSource.m in Sources */,
 				2DD6BED9189EF829004526DF /* main.m in Sources */,
 				30331FCB18D0CD4F008850CF /* SMBaseDataProvider.m in Sources */,
+				2DA1E39A18E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.m in Sources */,
 				30331FC418D0CAC8008850CF /* SMFetchedDataProvider.m in Sources */,
 				2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */,
 				2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */,
