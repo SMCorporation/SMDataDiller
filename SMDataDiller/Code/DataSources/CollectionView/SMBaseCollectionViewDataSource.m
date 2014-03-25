@@ -10,7 +10,7 @@
 #import "SMBaseDataProvider.h"
 #import "NSIndexPath+SMIndexPath.h"
 
-static CGFloat kDefaultSize = 60;
+static CGFloat const kDefaultSize = 60;
 
 @implementation SMBaseCollectionViewDataSource
 
