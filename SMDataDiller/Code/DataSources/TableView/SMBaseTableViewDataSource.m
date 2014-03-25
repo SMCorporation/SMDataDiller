@@ -12,6 +12,7 @@
 #import "SMDataSourceDelegate.h"
 #import "SMBaseDataProvider.h"
 
+static CGFloat const kDefaultHeight = 44;
 
 @implementation SMBaseTableViewDataSource
 
@@ -87,6 +88,14 @@
     return [self sizeForCellAtIndexPath:indexPath].height;
 }
 
+- (CGSize)sizeForCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize size = [super sizeForCellAtIndexPath:indexPath];
+    if (CGSizeEqualToSize(size, CGSizeZero)) {
+        size = CGSizeMake(self.tableView.frame.size.width, kDefaultHeight);
+    }
+    return size;
+}
 
 #pragma mark -
 #pragma mark UITableViewDelegate
