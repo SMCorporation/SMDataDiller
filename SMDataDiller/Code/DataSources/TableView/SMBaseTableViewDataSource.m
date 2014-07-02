@@ -108,5 +108,10 @@ static CGFloat const kDefaultHeight = 44;
     [self didSelectedRowAtIndexPath:indexPath];
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self didDeselectedRowAtIndexPath:indexPath];
+}
+
 
 @end

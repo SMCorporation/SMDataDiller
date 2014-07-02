@@ -12,5 +12,6 @@
 
 @optional
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;
+- (void)didDeselectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;
 
 @end

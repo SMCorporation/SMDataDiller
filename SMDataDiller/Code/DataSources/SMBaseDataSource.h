@@ -27,6 +27,7 @@
 - (void)fillCell:(id)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)setupCell:(id)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)didDeselectedRowAtIndexPath:(NSIndexPath *)indexPath;
 
 - (CGSize)sizeForCellAtIndexPath:(NSIndexPath *)indexPath;
 

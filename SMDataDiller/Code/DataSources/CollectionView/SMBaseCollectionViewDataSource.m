@@ -120,6 +120,10 @@ static CGFloat const kDefaultSize = 60;
     [self didSelectedRowAtIndexPath:indexPath];
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self didDeselectedRowAtIndexPath:indexPath];
+}
 
 #pragma mark -
 #pragma mark Helpers
