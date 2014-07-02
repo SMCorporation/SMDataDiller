@@ -84,7 +84,7 @@
 {
     if ([self.delegate respondsToSelector:@selector(didDeselectRowAtIndexPath:withItem:)]) {
         id itemObject = [self.dataProvider itemAtIndexPath:indexPath];
-        [self.delegate didSelectRowAtIndexPath:indexPath withItem:itemObject];
+        [self.delegate didDeselectRowAtIndexPath:indexPath withItem:itemObject];
     }
 }
 
