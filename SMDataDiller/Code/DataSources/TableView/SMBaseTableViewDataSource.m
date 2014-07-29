@@ -76,7 +76,7 @@ static CGFloat const kDefaultHeight = 44;
         if(!(cell = (UITableViewCell *)[self loadNibForClass:cellClass])) {
             cell = [[cellClass alloc] initWithStyle:self.cellsStyle reuseIdentifier:cellReuseIdentefier];
         } else {
-            NSAssert(cell.reuseIdentifier.length, @"Have to reuse identefire in XIB");
+            NSAssert(cell.reuseIdentifier.length && [cellReuseIdentefier isEqualToString:cell.reuseIdentifier], @"Have to reuse identefire in XIB");
         }
         [self setupCell:cell atIndexPath:indexPath];
     }
