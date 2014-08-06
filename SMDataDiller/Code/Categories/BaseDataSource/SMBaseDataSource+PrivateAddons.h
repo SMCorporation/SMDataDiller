@@ -10,6 +10,6 @@
 
 @interface SMBaseDataSource (PrivateAddons)
 
-- (UIView *)loadNibForClass:(Class)className;
++ (UIView *)loadNibForClass:(Class)className;
 
 @end

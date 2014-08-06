@@ -10,7 +10,7 @@
 
 @implementation SMBaseDataSource (PrivateAddons)
 
-- (UIView *)loadNibForClass:(Class)className
++ (UIView *)loadNibForClass:(Class)className
 {
     NSString *classString = NSStringFromClass(className);
     if ([[NSBundle mainBundle] pathForResource:classString ofType:@"nib"].length) {

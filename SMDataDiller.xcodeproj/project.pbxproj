@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1F63DD1992606C000F207C /* UITableViewCell+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F63DC1992606C000F207C /* UITableViewCell+Size.m */; };
+		2D1F63E219926227000F207C /* UICollectionViewCell+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F63E119926227000F207C /* UICollectionViewCell+Size.m */; };
 		2D3B72FB18A6AE3E001DE6DF /* SMSectionObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */; };
 		2D3B72FE18A6AE56001DE6DF /* SMTestSectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */; };
 		2DA1E39A18E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E39918E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.m */; };
@@ -52,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D1F63DB1992606C000F207C /* UITableViewCell+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Size.h"; sourceTree = "<group>"; };
+		2D1F63DC1992606C000F207C /* UITableViewCell+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Size.m"; sourceTree = "<group>"; };
+		2D1F63E019926227000F207C /* UICollectionViewCell+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Size.h"; sourceTree = "<group>"; };
+		2D1F63E119926227000F207C /* UICollectionViewCell+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Size.m"; sourceTree = "<group>"; };
 		2D3B72FA18A6AE3E001DE6DF /* SMSectionObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSectionObjectTests.m; sourceTree = "<group>"; };
 		2D3B72FC18A6AE56001DE6DF /* SMTestSectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestSectionObject.h; sourceTree = "<group>"; };
 		2D3B72FD18A6AE56001DE6DF /* SMTestSectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestSectionObject.m; sourceTree = "<group>"; };
@@ -136,6 +142,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D1F63DA1992605F000F207C /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2D1F63DB1992606C000F207C /* UITableViewCell+Size.h */,
+				2D1F63DC1992606C000F207C /* UITableViewCell+Size.m */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		2D1F63DF19926217000F207C /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2D1F63E019926227000F207C /* UICollectionViewCell+Size.h */,
+				2D1F63E119926227000F207C /* UICollectionViewCell+Size.m */,
+			);
+			path = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
 		2D3B72F918A6AE3E001DE6DF /* SectionObjectTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +387,8 @@
 		2DF3B3D018B0FAD00063DE46 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2D1F63DF19926217000F207C /* UICollectionViewCell */,
+				2D1F63DA1992605F000F207C /* UITableViewCell */,
 				2DA1E39718E1AF2F00C06930 /* BaseDataSource */,
 				2DF3B3D118B0FAD00063DE46 /* NSIndexPath */,
 				2DF3B3D518B0FB2F0063DE46 /* SMCategories.h */,
@@ -537,6 +563,8 @@
 				30331FC418D0CAC8008850CF /* SMFetchedDataProvider.m in Sources */,
 				2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */,
 				2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */,
+				2D1F63DD1992606C000F207C /* UITableViewCell+Size.m in Sources */,
+				2D1F63E219926227000F207C /* UICollectionViewCell+Size.m in Sources */,
 				2DD6BF1E189F1FCD004526DF /* SMSMTestTableDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

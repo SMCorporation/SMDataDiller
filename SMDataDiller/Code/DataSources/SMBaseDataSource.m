@@ -10,6 +10,10 @@
 #import "SMBaseDataSource+PrivateAddons.h"
 #import "SMCell.h"
 
+#import "UITableViewCell+Size.h"
+#import "UICollectionViewCell+Size.h"
+
+
 @implementation SMBaseDataSource
 
 - (id)init
@@ -50,11 +54,12 @@
 - (CGSize)sizeForCellAtIndexPath:(NSIndexPath *)indexPath
 {
     Class cellClass = [self classForCellAtIndexPath:indexPath];
-    UIView *view = [self loadNibForClass:cellClass];
-    if(view) {
-        return view.frame.size;
-    } else if ([cellClass respondsToSelector:@selector(size)]) {
+    if ([cellClass respondsToSelector:@selector(size)]) {
         return [cellClass size];
+    } else {
+        if ([cellClass respondsToSelector:@selector(sizeFromXib)]) {
+            return [cellClass sizeFromXib];
+        }
     }
     return CGSizeZero;
 }
