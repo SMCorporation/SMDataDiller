@@ -10,29 +10,29 @@
 	<string>SMDataDiller</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>04C0E5DF-855E-4688-94E9-B69FF77390C9</key>
-		<string>ssh://github.com/SMCorpporation/SMDataDiller.git</string>
+		<key>64081D814E3ECC80322C9EE04A6CAC7B24DE620D</key>
+		<string>github.com:SMCorpporation/SMDataDiller.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SMDataDiller.xcodeproj/project.xcworkspace</string>
+	<string>SMDataDiller.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>04C0E5DF-855E-4688-94E9-B69FF77390C9</key>
+		<key>64081D814E3ECC80322C9EE04A6CAC7B24DE620D</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/SMCorpporation/SMDataDiller.git</string>
+	<string>github.com:SMCorpporation/SMDataDiller.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>04C0E5DF-855E-4688-94E9-B69FF77390C9</string>
+	<string>64081D814E3ECC80322C9EE04A6CAC7B24DE620D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>04C0E5DF-855E-4688-94E9-B69FF77390C9</string>
+			<string>64081D814E3ECC80322C9EE04A6CAC7B24DE620D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SMDataDiller</string>
 		</dict>
