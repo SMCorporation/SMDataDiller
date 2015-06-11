@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSArray *items;
 
 - (void)initialConfigure;
+- (void)reload;
 
 - (NSUInteger)numberOfSections;
 - (NSUInteger)numberOfItemsInSection:(NSUInteger)section;

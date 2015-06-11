@@ -33,6 +33,10 @@
 
 - (void)reload
 {
+    if ([self.dataProvider respondsToSelector:@selector(reload)]) {
+        [self.dataProvider reload];
+    }
+ 
     // need to implement in subclasses
 }
 

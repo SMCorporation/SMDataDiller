@@ -25,6 +25,11 @@
     // there is place for any initial configurations of your dataProvider
 }
 
+- (void)reload
+{
+    // there is place for logic of re creating items
+}
+
 
 #pragma mark -
 #pragma mark Content Managment
