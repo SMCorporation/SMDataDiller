@@ -18,6 +18,8 @@
 
 - (id)init
 {
+    NSAssert([self class] != [SMBaseDataSource class], @"Must use SMBaseTableViewDataSource or SMBaseCollectionViewDataSource");
+    
     self = [super init];
     if (self) {
         self.shouldAutoDeselectCells = YES;
