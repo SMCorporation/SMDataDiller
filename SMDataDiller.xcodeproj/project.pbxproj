@@ -15,6 +15,8 @@
 		2DA668F818AD6E21006D92DE /* SMBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA668F718AD6E21006D92DE /* SMBaseDataSource.m */; };
 		2DA668FB18AD728D006D92DE /* SMBaseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA668FA18AD728D006D92DE /* SMBaseCollectionViewDataSource.m */; };
 		2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC77ED18AD114800F5FEA0 /* SMBaseTableViewDataSource.m */; };
+		2DC37DEE1BA8048900FA985C /* SMTestTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC37DEC1BA8048900FA985C /* SMTestTableViewCell2.m */; };
+		2DC37DF11BA80CDC00FA985C /* SMTestTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC37DF01BA80CDC00FA985C /* SMTestTableViewCell2.xib */; };
 		2DD6BECD189EF829004526DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BECC189EF829004526DF /* Foundation.framework */; };
 		2DD6BECF189EF829004526DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BECE189EF829004526DF /* CoreGraphics.framework */; };
 		2DD6BED1189EF829004526DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BED0189EF829004526DF /* UIKit.framework */; };
@@ -70,6 +72,9 @@
 		2DBC77EC18AD114800F5FEA0 /* SMBaseTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBaseTableViewDataSource.h; sourceTree = "<group>"; };
 		2DBC77ED18AD114800F5FEA0 /* SMBaseTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBaseTableViewDataSource.m; sourceTree = "<group>"; };
 		2DBC77EF18AD122100F5FEA0 /* SMDataSourceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMDataSourceDelegate.h; sourceTree = "<group>"; };
+		2DC37DEB1BA8048900FA985C /* SMTestTableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestTableViewCell2.h; sourceTree = "<group>"; };
+		2DC37DEC1BA8048900FA985C /* SMTestTableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestTableViewCell2.m; sourceTree = "<group>"; };
+		2DC37DF01BA80CDC00FA985C /* SMTestTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMTestTableViewCell2.xib; sourceTree = "<group>"; };
 		2DD6BEC9189EF829004526DF /* SMDataDiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMDataDiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6BECC189EF829004526DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DD6BECE189EF829004526DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -197,6 +202,16 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		2DC37DEA1BA8043300FA985C /* SMTestTableViewCell2 */ = {
+			isa = PBXGroup;
+			children = (
+				2DC37DEB1BA8048900FA985C /* SMTestTableViewCell2.h */,
+				2DC37DEC1BA8048900FA985C /* SMTestTableViewCell2.m */,
+				2DC37DF01BA80CDC00FA985C /* SMTestTableViewCell2.xib */,
+			);
+			path = SMTestTableViewCell2;
+			sourceTree = "<group>";
+		};
 		2DD6BEC0189EF829004526DF = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +309,7 @@
 		2DD6BF11189F1FCD004526DF /* aCell */ = {
 			isa = PBXGroup;
 			children = (
+				2DC37DEA1BA8043300FA985C /* SMTestTableViewCell2 */,
 				2DD6BF12189F1FCD004526DF /* SMTestTableViewCell.h */,
 				2DD6BF13189F1FCD004526DF /* SMTestTableViewCell.m */,
 				2DD6BF14189F1FCD004526DF /* SMTestTableViewCell.xib */,
@@ -497,6 +513,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = SM;
 				TargetAttributes = {
+					2DD6BEC8189EF829004526DF = {
+						DevelopmentTeam = X38N88UJGZ;
+					};
 					2DD6BEE3189EF829004526DF = {
 						TestTargetID = 2DD6BEC8189EF829004526DF;
 					};
@@ -528,6 +547,7 @@
 				2DD6BED7189EF829004526DF /* InfoPlist.strings in Resources */,
 				2DD6BF1D189F1FCD004526DF /* SMTestTableViewCell.xib in Resources */,
 				2DF3B3CF18B0F6630063DE46 /* SMCollectionViewCell1.xib in Resources */,
+				2DC37DF11BA80CDC00FA985C /* SMTestTableViewCell2.xib in Resources */,
 				2DD6BEDF189EF829004526DF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,6 +577,7 @@
 				2DD6BEDD189EF829004526DF /* SMAppDelegate.m in Sources */,
 				30331FD318D0D12E008850CF /* SMSectionObject.m in Sources */,
 				2DA668F818AD6E21006D92DE /* SMBaseDataSource.m in Sources */,
+				2DC37DEE1BA8048900FA985C /* SMTestTableViewCell2.m in Sources */,
 				2DD6BED9189EF829004526DF /* main.m in Sources */,
 				30331FCB18D0CD4F008850CF /* SMBaseDataProvider.m in Sources */,
 				2DA1E39A18E1AF2F00C06930 /* SMBaseDataSource+PrivateAddons.m in Sources */,
@@ -684,6 +705,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SMDataDiller/SMDataDiller-Prefix.pch";
 				INFOPLIST_FILE = "SMDataDiller/SMDataDiller-Info.plist";
@@ -697,6 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SMDataDiller/SMDataDiller-Prefix.pch";
 				INFOPLIST_FILE = "SMDataDiller/SMDataDiller-Info.plist";

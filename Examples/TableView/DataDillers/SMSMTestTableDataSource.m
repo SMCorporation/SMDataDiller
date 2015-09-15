@@ -8,30 +8,33 @@
 
 #import "SMSMTestTableDataSource.h"
 #import "SMTestTableViewCell.h"
+#import "SMTestTableViewCell2.h"
+
 
 @implementation SMSMTestTableDataSource
 
-- (CGSize)sizeForCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGSize size = [super sizeForCellAtIndexPath:indexPath];
-    CGFloat cellsCount = [self.dataProvider numberOfItemsInSection:indexPath.section];
-    size.height = self.tableView.frame.size.height / cellsCount;
-    return size;
+- (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath //don't implement this method if need default tableViewCell
+{    
+    return (indexPath.row % 2) ? [SMTestTableViewCell2 class] : [SMTestTableViewCell class];
 }
 
-- (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath
+- (NSString *)cellReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [SMTestTableViewCell class]; //don't implement this method if need default tableViewCell
+    return (indexPath.row % 2) ? @"smcell2" : @"testCellReuseIdentifier";
 }
 
 - (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    [super fillCell:cell atIndexPath:indexPath];
+    
     NSString *record = [self.dataProvider itemAtIndexPath:indexPath];
     cell.textLabel.text = record;
 }
 
 - (void)setupCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    [super setupCell:cell atIndexPath:indexPath];
+    
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.font = [UIFont boldSystemFontOfSize:25];
 }

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>B8883D7A-D9A3-4602-9963-0E4D8E0C8B89</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SMDataDiller</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>64081D814E3ECC80322C9EE04A6CAC7B24DE620D</key>
 		<string>github.com:SMCorpporation/SMDataDiller.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SMDataDiller.xcodeproj</string>
+	<string>SMDataDiller.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>64081D814E3ECC80322C9EE04A6CAC7B24DE620D</key>

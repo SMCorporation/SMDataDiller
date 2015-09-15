@@ -20,16 +20,24 @@
 
 @implementation SMTestTableViewController
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    [super viewWillAppear:animated];
+    [super viewDidLoad];
     [self setupDataDillers];
 }
 
 - (void)setupDataDillers
 {
     SMBaseDataProvider *dataProvider = [[SMBaseDataProvider alloc] init];
-    [dataProvider setItems:@[@"Title1", @"TItle2", @"TItle3", @"TItle4", @"TItle5"]];
+    NSUInteger count = 1000;
+    NSMutableArray *titles = [NSMutableArray arrayWithCapacity:count];
+    
+    for (int i = 0; i < count; i++) {
+        NSString *title = [NSString stringWithFormat:@"Title%d", i + 1];
+        [titles addObject:title];
+    }
+    
+    [dataProvider setItems:titles];
     
     self.dataSource = [[SMSMTestTableDataSource alloc] initWithDataProvider:dataProvider tableView:self.tableView];
     self.dataSource.delegate = self;

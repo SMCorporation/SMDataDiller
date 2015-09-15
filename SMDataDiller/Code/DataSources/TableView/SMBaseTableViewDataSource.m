@@ -99,6 +99,7 @@ static CGFloat const kDefaultHeight = 44;
     return size;
 }
 
+
 #pragma mark -
 #pragma mark UITableViewDelegate
 
