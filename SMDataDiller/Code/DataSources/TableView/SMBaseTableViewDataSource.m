@@ -8,6 +8,7 @@
 
 #import "SMBaseTableViewDataSource.h"
 #import "SMCell.h"
+#import "SMSectionObject.h"
 #import "SMDataSourceDelegate.h"
 #import "SMBaseDataProvider.h"
 
@@ -100,6 +101,16 @@ static CGFloat const kDefaultHeight = 44;
         size = CGSizeMake(self.tableView.frame.size.width, kDefaultHeight);
     }
     return size;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    id object = [self.dataProvider sectionObjectForSection:section];
+    if ([object isKindOfClass:[SMSectionObject class]]) {
+        return ((SMSectionObject *)object).name;
+    }
+    
+    return nil;
 }
 
 
