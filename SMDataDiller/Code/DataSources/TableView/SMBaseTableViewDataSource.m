@@ -106,7 +106,7 @@ static CGFloat const kDefaultHeight = 44;
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     id object = [self.dataProvider sectionObjectForSection:section];
-    if ([object isKindOfClass:[SMSectionObject class]]) {
+    if ([object isKindOfClass:[SMSectionObject class]] && self.automaticallySectionTitle) {
         return ((SMSectionObject *)object).name;
     }
     
