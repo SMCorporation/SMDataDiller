@@ -12,4 +12,6 @@
 
 + (CGSize)sizeFromXib;
 
+- (void)setCellReuseIdentifier:(NSString *)identifier;
+
 @end

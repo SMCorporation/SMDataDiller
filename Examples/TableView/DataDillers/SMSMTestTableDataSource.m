@@ -9,18 +9,19 @@
 #import "SMSMTestTableDataSource.h"
 #import "SMTestTableViewCell.h"
 #import "SMTestTableViewCell2.h"
+#import "SMTestTableViewCell3.h"
 
 
 @implementation SMSMTestTableDataSource
 
 - (Class)classForCellAtIndexPath:(NSIndexPath *)indexPath //don't implement this method if need default tableViewCell
-{    
-    return (indexPath.row % 2) ? [SMTestTableViewCell2 class] : [SMTestTableViewCell class];
+{
+    return (indexPath.row % 2) ? [SMTestTableViewCell2 class] : [SMTestTableViewCell3 class];
 }
 
 - (NSString *)cellReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath
 {
-    return (indexPath.row % 2) ? @"smcell2" : @"testCellReuseIdentifier";
+    return (indexPath.row % 2) ? @"smcell3" : @"smcell33333";
 }
 
 - (void)fillCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath

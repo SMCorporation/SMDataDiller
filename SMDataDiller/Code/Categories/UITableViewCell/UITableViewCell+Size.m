@@ -13,8 +13,16 @@
 
 
 static NSString *const kSizeKey = @"sm_UITableViewCell_size_key";
+static NSString *const kReuseIdentifierKey = @"sm_reuse_identifier_ket";
+
 
 @implementation UITableViewCell (Size)
+
++ (void)load
+{
+    method_exchangeImplementations(class_getInstanceMethod(self, @selector(reuseIdentifier)),
+                                   class_getInstanceMethod(self, @selector(smReuseIdentifier)));
+}
 
 + (CGSize)sizeFromXib
 {
@@ -31,6 +39,21 @@ static NSString *const kSizeKey = @"sm_UITableViewCell_size_key";
     }
     
     return size;
+}
+
+- (void)setCellReuseIdentifier:(NSString *)identifier
+{
+    objc_setAssociatedObject(self, &kReuseIdentifierKey, identifier, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (NSString *)smReuseIdentifier
+{
+    NSString *ident = objc_getAssociatedObject(self, &kReuseIdentifierKey);
+    if (!ident.length) {
+        ident = [self smReuseIdentifier];
+    }
+    
+    return ident;
 }
 
 @end

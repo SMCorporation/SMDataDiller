@@ -17,6 +17,7 @@
 		2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC77ED18AD114800F5FEA0 /* SMBaseTableViewDataSource.m */; };
 		2DC37DEE1BA8048900FA985C /* SMTestTableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC37DEC1BA8048900FA985C /* SMTestTableViewCell2.m */; };
 		2DC37DF11BA80CDC00FA985C /* SMTestTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC37DF01BA80CDC00FA985C /* SMTestTableViewCell2.xib */; };
+		2DC37DF51BA84D3400FA985C /* SMTestTableViewCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC37DF41BA84D3400FA985C /* SMTestTableViewCell3.m */; };
 		2DD6BECD189EF829004526DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BECC189EF829004526DF /* Foundation.framework */; };
 		2DD6BECF189EF829004526DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BECE189EF829004526DF /* CoreGraphics.framework */; };
 		2DD6BED1189EF829004526DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD6BED0189EF829004526DF /* UIKit.framework */; };
@@ -75,6 +76,8 @@
 		2DC37DEB1BA8048900FA985C /* SMTestTableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestTableViewCell2.h; sourceTree = "<group>"; };
 		2DC37DEC1BA8048900FA985C /* SMTestTableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestTableViewCell2.m; sourceTree = "<group>"; };
 		2DC37DF01BA80CDC00FA985C /* SMTestTableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMTestTableViewCell2.xib; sourceTree = "<group>"; };
+		2DC37DF31BA84D3400FA985C /* SMTestTableViewCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTestTableViewCell3.h; sourceTree = "<group>"; };
+		2DC37DF41BA84D3400FA985C /* SMTestTableViewCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTestTableViewCell3.m; sourceTree = "<group>"; };
 		2DD6BEC9189EF829004526DF /* SMDataDiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMDataDiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6BECC189EF829004526DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2DD6BECE189EF829004526DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -212,6 +215,15 @@
 			path = SMTestTableViewCell2;
 			sourceTree = "<group>";
 		};
+		2DC37DF21BA84B9B00FA985C /* SMTestTableViewCell3 */ = {
+			isa = PBXGroup;
+			children = (
+				2DC37DF31BA84D3400FA985C /* SMTestTableViewCell3.h */,
+				2DC37DF41BA84D3400FA985C /* SMTestTableViewCell3.m */,
+			);
+			path = SMTestTableViewCell3;
+			sourceTree = "<group>";
+		};
 		2DD6BEC0189EF829004526DF = {
 			isa = PBXGroup;
 			children = (
@@ -309,10 +321,11 @@
 		2DD6BF11189F1FCD004526DF /* aCell */ = {
 			isa = PBXGroup;
 			children = (
-				2DC37DEA1BA8043300FA985C /* SMTestTableViewCell2 */,
 				2DD6BF12189F1FCD004526DF /* SMTestTableViewCell.h */,
 				2DD6BF13189F1FCD004526DF /* SMTestTableViewCell.m */,
 				2DD6BF14189F1FCD004526DF /* SMTestTableViewCell.xib */,
+				2DC37DEA1BA8043300FA985C /* SMTestTableViewCell2 */,
+				2DC37DF21BA84B9B00FA985C /* SMTestTableViewCell3 */,
 			);
 			path = aCell;
 			sourceTree = "<group>";
@@ -585,6 +598,7 @@
 				2DD6BF20189F1FCD004526DF /* SMTestTableViewController.m in Sources */,
 				2DBC77EE18AD114800F5FEA0 /* SMBaseTableViewDataSource.m in Sources */,
 				2D1F63DD1992606C000F207C /* UITableViewCell+Size.m in Sources */,
+				2DC37DF51BA84D3400FA985C /* SMTestTableViewCell3.m in Sources */,
 				2D1F63E219926227000F207C /* UICollectionViewCell+Size.m in Sources */,
 				2DD6BF1E189F1FCD004526DF /* SMSMTestTableDataSource.m in Sources */,
 			);

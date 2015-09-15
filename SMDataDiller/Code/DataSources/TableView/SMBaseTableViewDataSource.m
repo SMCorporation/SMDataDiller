@@ -7,10 +7,13 @@
 //
 
 #import "SMBaseTableViewDataSource.h"
-#import "SMBaseDataSource+PrivateAddons.h"
 #import "SMCell.h"
 #import "SMDataSourceDelegate.h"
 #import "SMBaseDataProvider.h"
+
+#import "SMBaseDataSource+PrivateAddons.h"
+#import "UITableViewCell+Size.h"
+
 
 static CGFloat const kDefaultHeight = 44;
 
@@ -73,11 +76,11 @@ static CGFloat const kDefaultHeight = 44;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentefier];
     if (!cell) {
         Class cellClass = [self classForCellAtIndexPath:indexPath];
-        if(!(cell = (UITableViewCell *)[[self class] loadNibForClass:cellClass])) {
+        if (!(cell = (UITableViewCell *)[[self class] loadNibForClass:cellClass])) {
             cell = [[cellClass alloc] initWithStyle:self.cellsStyle reuseIdentifier:cellReuseIdentefier];
-        } else {
-            NSAssert(cell.reuseIdentifier.length && [cellReuseIdentefier isEqualToString:cell.reuseIdentifier], @"Have to reuse identefire in XIB");
         }
+        
+        [cell setCellReuseIdentifier:cellReuseIdentefier];
         [self setupCell:cell atIndexPath:indexPath];
     }
     
@@ -105,7 +108,7 @@ static CGFloat const kDefaultHeight = 44;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(self.shouldAutoDeselectCells) {
+    if (self.shouldAutoDeselectCells) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     [self didSelectedRowAtIndexPath:indexPath];

@@ -34,4 +34,3 @@ static NSString *const kSizeKey = @"sm_UICollectionViewCell_size_key";
 }
 
 @end
-
