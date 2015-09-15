@@ -9,18 +9,28 @@
 #import "UICollectionViewCell+Size.h"
 #import "SMBaseDataSource+PrivateAddons.h"
 
+#import <objc/runtime.h>
+
+
+static NSString *const kSizeKey = @"sm_UICollectionViewCell_size_key";
+
 @implementation UICollectionViewCell (Size)
 
 + (CGSize)sizeFromXib
 {
-    static CGSize sizeOfView;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        UIView *view = [SMBaseDataSource loadNibForClass:[self class]]; // make it once, to avoid loading xib everytime, when "+size" will be called
-        sizeOfView = view.frame.size;
-    });
+    CGSize size = CGSizeZero;
+    NSValue *sizeValue = objc_getAssociatedObject(self, &kSizeKey);
     
-    return sizeOfView;
+    if (!sizeValue) {
+        UIView *view = [SMBaseDataSource loadNibForClass:[self class]];
+        size = view.frame.size;
+        
+        objc_setAssociatedObject(self, &kSizeKey, [NSValue valueWithCGSize:size], OBJC_ASSOCIATION_RETAIN);
+    } else {
+        size = [sizeValue CGSizeValue];
+    }
+    
+    return size;
 }
 
 @end
