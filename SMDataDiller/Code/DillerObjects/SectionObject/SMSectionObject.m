@@ -35,6 +35,10 @@
 
 - (NSUInteger)rowForItem:(id)item
 {
+    if (!self.items.count) {
+        return NSNotFound;
+    }
+    
     return [self.items indexOfObject:item];
 }
 
