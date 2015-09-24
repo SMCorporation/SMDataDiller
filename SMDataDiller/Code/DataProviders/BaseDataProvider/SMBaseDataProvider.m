@@ -39,7 +39,7 @@
     if ([self hasSections]) {
         return [self.items count];
     }
-    return 1;
+    return (self.items.count) ? 1 : 0;
 }
 
 - (NSUInteger)numberOfItemsInSection:(NSUInteger)section
