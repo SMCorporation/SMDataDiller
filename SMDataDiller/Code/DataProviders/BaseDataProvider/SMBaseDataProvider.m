@@ -65,6 +65,11 @@
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self hasSections]) {
+        
+        if (self.items.count <= indexPath.section) {
+            return nil;
+        }
+        
         id item = self.items[indexPath.section];
         if ([self isSectionObject:item]) {
             return [item itemForRow:indexPath.row];

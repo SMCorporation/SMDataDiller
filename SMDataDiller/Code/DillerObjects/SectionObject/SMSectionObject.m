@@ -30,6 +30,10 @@
 
 - (id)itemForRow:(NSUInteger)row
 {
+    if (self.items.count <= row) {
+        return nil;
+    }
+    
     return self.items[row];
 }
 

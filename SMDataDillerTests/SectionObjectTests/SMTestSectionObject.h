@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SMSectionObject.h"
 
-@interface SMTestSectionObject : NSObject <SMSectionObject>
+@interface SMTestSectionObject : NSObject <SMSectionObjectProtocol>
 
 - (id)initWithRows:(NSArray *)rows;
 
