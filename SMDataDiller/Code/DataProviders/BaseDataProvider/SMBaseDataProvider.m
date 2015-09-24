@@ -45,6 +45,10 @@
 - (NSUInteger)numberOfItemsInSection:(NSUInteger)section
 {
     if ([self hasSections]) {
+        if (self.items.count <= section) {
+            return NSNotFound;
+        }
+        
         id sectionObject = self.items[section];
         if ([self isSectionObject:sectionObject]) {
             return [sectionObject itemsCount];
