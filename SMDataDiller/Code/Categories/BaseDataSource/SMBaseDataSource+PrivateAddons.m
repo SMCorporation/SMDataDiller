@@ -7,16 +7,36 @@
 //
 
 #import "SMBaseDataSource+PrivateAddons.h"
+#import "SMCell.h"
 
 @implementation SMBaseDataSource (PrivateAddons)
 
 + (UIView *)loadNibForClass:(Class)className
 {
     NSString *classString = NSStringFromClass(className);
-    if ([[NSBundle mainBundle] pathForResource:classString ofType:@"nib"].length) {
-        return (UICollectionViewCell *)[[[NSBundle mainBundle] loadNibNamed:classString owner:nil options:nil] firstObject];
+    return [self loadNibForName:classString];
+}
+
++ (UIView *)loadNibForName:(NSString *)nibName
+{
+    if ([[NSBundle mainBundle] pathForResource:nibName ofType:@"nib"].length) {
+        return [[[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil] firstObject];
     }
     return nil;
+}
+
+- (NSString *)nibForCellClass:(Class)cellClass
+{
+    NSString *nibName = NSStringFromClass(cellClass);
+    if ([cellClass respondsToSelector:@selector(nibName)]) {
+        nibName = [cellClass nibName];
+    }
+    
+    if (![[NSBundle mainBundle] pathForResource:nibName ofType:@"nib"].length) {
+        nibName = nil;
+    }
+
+    return nibName;
 }
 
 @end

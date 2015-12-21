@@ -11,5 +11,8 @@
 @interface SMBaseDataSource (PrivateAddons)
 
 + (UIView *)loadNibForClass:(Class)className;
++ (UIView *)loadNibForName:(NSString *)nibName;
+
+- (NSString *)nibForCellClass:(Class)cellClass;
 
 @end

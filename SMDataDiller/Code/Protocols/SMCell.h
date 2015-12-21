@@ -14,5 +14,6 @@
 
 @optional
 + (CGSize)size;
++ (NSString *)nibName;
 
 @end

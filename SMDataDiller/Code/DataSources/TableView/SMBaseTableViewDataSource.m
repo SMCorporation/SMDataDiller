@@ -77,8 +77,12 @@ static CGFloat const kDefaultHeight = 44;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentefier];
     if (!cell) {
         Class cellClass = [self classForCellAtIndexPath:indexPath];
-        if (!(cell = (UITableViewCell *)[[self class] loadNibForClass:cellClass])) {
+        NSString *nibName = [self nibForCellClass:cellClass];
+        
+        if (!nibName.length) {
             cell = [[cellClass alloc] initWithStyle:self.cellsStyle reuseIdentifier:cellReuseIdentefier];
+        } else {
+            cell = (UITableViewCell *)[[self class] loadNibForName:nibName];
         }
         
         [cell setCellReuseIdentifier:cellReuseIdentefier];

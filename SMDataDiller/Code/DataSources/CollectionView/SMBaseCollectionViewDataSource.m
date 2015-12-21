@@ -9,6 +9,8 @@
 #import "SMBaseCollectionViewDataSource.h"
 #import "SMBaseDataProvider.h"
 #import "NSIndexPath+SMIndexPath.h"
+#import "SMBaseDataSource+PrivateAddons.h"
+
 
 static CGFloat const kDefaultSize = 60;
 
@@ -39,7 +41,7 @@ static CGFloat const kDefaultSize = 60;
 
 - (void)reload
 {
-    [super reload];    
+    [super reload];
     [self.collectionView reloadData];
 }
 
@@ -54,6 +56,7 @@ static CGFloat const kDefaultSize = 60;
     if (classesOrNibs.count) {
         for (NSString *cellReuseIdentifier in classesOrNibs) {
             NSArray *cellsNibsOrClasses = [classesOrNibs valueForKey:cellReuseIdentifier];
+            
             for (id classOrNib in cellsNibsOrClasses) {
                 if ([classOrNib isKindOfClass:[NSString class]]) {
                     UINib *cellNib = [UINib nibWithNibName:classOrNib bundle:[NSBundle mainBundle]];
@@ -65,7 +68,7 @@ static CGFloat const kDefaultSize = 60;
         }
     } else {
         NSIndexPath *indexPathZero = [NSIndexPath indexPathZero];
-        [self.collectionView registerClass:[self classForCellAtIndexPath:indexPathZero] 
+        [self.collectionView registerClass:[self classForCellAtIndexPath:indexPathZero]
                 forCellWithReuseIdentifier:[self cellReuseIdentifierAtIndexPath:indexPathZero]];
     }
 }
@@ -78,6 +81,7 @@ static CGFloat const kDefaultSize = 60;
     }
     return size;
 }
+
 
 #pragma mark -
 #pragma mark UICollectionViewDataSource
@@ -125,6 +129,7 @@ static CGFloat const kDefaultSize = 60;
     [self didDeselectedRowAtIndexPath:indexPath];
 }
 
+
 #pragma mark -
 #pragma mark Helpers
 
@@ -137,15 +142,15 @@ static CGFloat const kDefaultSize = 60;
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
             NSString *cellReuseIdentifier = [self cellReuseIdentifierAtIndexPath:indexPath];
             Class cellClass = [self classForCellAtIndexPath:indexPath];
-            NSString *nibName = NSStringFromClass(cellClass);
+            NSString *nibName = [self nibForCellClass:cellClass];
+                        
             NSMutableSet *cellsSet = [cellsNibsOrClassesDictionary valueForKey:cellReuseIdentifier];
-            
             if (!cellsSet) {
                 cellsSet = [NSMutableSet new];
                 [cellsNibsOrClassesDictionary setValue:cellsSet forKey:cellReuseIdentifier];
             }
             
-            if (nibName.length && cellClass != [UICollectionViewCell class]) {
+            if (nibName.length) {
                 [cellsSet addObject:nibName];
             } else {
                 [cellsSet addObject:cellClass];
