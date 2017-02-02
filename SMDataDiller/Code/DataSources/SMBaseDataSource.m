@@ -85,16 +85,26 @@
 
 - (void)didSelectedRowAtIndexPath:(NSIndexPath *)indexPath;
 {
+    id itemObject = [self.dataProvider itemAtIndexPath:indexPath];
+    
+    if ([self.delegate respondsToSelector:@selector(dataSource:didSelectRowAtIndexPath:withItem:)]) {
+        [self.delegate dataSource:self didSelectRowAtIndexPath:indexPath withItem:itemObject];
+    }
+    
     if ([self.delegate respondsToSelector:@selector(didSelectRowAtIndexPath:withItem:)]) {
-        id itemObject = [self.dataProvider itemAtIndexPath:indexPath];
         [self.delegate didSelectRowAtIndexPath:indexPath withItem:itemObject];
     }
 }
 
 - (void)didDeselectedRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    id itemObject = [self.dataProvider itemAtIndexPath:indexPath];
+    
+    if ([self.delegate respondsToSelector:@selector(dataSource:didDeselectRowAtIndexPath:withItem:)]) {
+        [self.delegate dataSource:self didDeselectRowAtIndexPath:indexPath withItem:itemObject];
+    }
+    
     if ([self.delegate respondsToSelector:@selector(didDeselectRowAtIndexPath:withItem:)]) {
-        id itemObject = [self.dataProvider itemAtIndexPath:indexPath];
         [self.delegate didDeselectRowAtIndexPath:indexPath withItem:itemObject];
     }
 }
