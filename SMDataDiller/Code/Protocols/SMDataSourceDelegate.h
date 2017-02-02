@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class SMBaseDataSource;
 @protocol SMDataSourceDelegate <NSObject>
 
 @optional
-- (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;
-- (void)didDeselectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;
+- (void)dataSource:(SMBaseDataSource *)dataSource didSelectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;
+- (void)dataSource:(SMBaseDataSource *)dataSource didDeselectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item;
+
+- (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item DEPRECATED_MSG_ATTRIBUTE("use -dataSource:didSelectRowAtIndexPath:withItem");
+- (void)didDeselectRowAtIndexPath:(NSIndexPath *)indexPath withItem:(id)item DEPRECATED_MSG_ATTRIBUTE("use -dataSource:didDeselectRowAtIndexPath:withItem");
 
 @end
