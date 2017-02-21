@@ -31,8 +31,6 @@ static CGFloat const kDefaultSize = 60;
     _collectionView = collectionView;
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
-    
-    [self registerCells];
 }
 
 
@@ -42,6 +40,7 @@ static CGFloat const kDefaultSize = 60;
 - (void)reload
 {
     [super reload];
+    [self registerCells];
     [self.collectionView reloadData];
 }
 
