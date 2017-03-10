@@ -51,6 +51,11 @@ static CGFloat const kDefaultHeight = 44;
     return [UITableViewCell class];
 }
 
+- (NSString *)cellReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NSStringFromClass([self classForCellAtIndexPath:indexPath]);
+}
+
 - (void)reload
 {
     [super reload];
