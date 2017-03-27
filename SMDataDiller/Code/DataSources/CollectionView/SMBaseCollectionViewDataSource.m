@@ -22,7 +22,6 @@ static CGFloat const kDefaultSize = 60;
     if (self) {
         self.dataProvider = dataProvider;
         self.collectionView = collectionView;
-        [self reload];
     }
     return self;
 }
